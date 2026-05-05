@@ -1,0 +1,18 @@
+uuid: e0700e3b-21fd-47a3-a1cf-e4be3bb79a7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.training_category
+id: taxonomy_term.training_category.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: training_category
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

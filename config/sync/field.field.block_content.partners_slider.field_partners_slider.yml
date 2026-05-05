@@ -1,0 +1,43 @@
+uuid: e0137b1c-8f89-45a4-8cc6-edeee6bd46ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.partners_slider
+    - field.storage.block_content.field_partners_slider
+    - paragraphs.paragraphs_type.partner_logo
+  module:
+    - entity_reference_revisions
+id: block_content.partners_slider.field_partners_slider
+field_name: field_partners_slider
+entity_type: block_content
+bundle: partners_slider
+label: 'Partners Slider'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      partner_logo: partner_logo
+    negate: 0
+    target_bundles_drag_drop:
+      about_tab:
+        weight: 6
+        enabled: false
+      partner_logo:
+        weight: 7
+        enabled: true
+      region_item:
+        weight: 8
+        enabled: false
+      slide:
+        weight: 9
+        enabled: false
+      statistic_item:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

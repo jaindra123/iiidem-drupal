@@ -1,0 +1,19 @@
+uuid: 283d33df-8f6e-4656-9fe4-2e6bdeeea450
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_about_tab_content
+field_name: field_about_tab_content
+entity_type: paragraph
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

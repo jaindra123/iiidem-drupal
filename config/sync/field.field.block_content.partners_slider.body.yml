@@ -1,0 +1,24 @@
+uuid: cdb60db3-748e-46b7-8ed5-e811d35cae78
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.partners_slider
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.partners_slider.body
+field_name: body
+entity_type: block_content
+bundle: partners_slider
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -1,0 +1,31 @@
+uuid: c0f26a93-ded6-4e84-8692-fb7273cc4e3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_tab.field_about_tab_content
+    - field.field.paragraph.about_tab.field_tab_title
+    - paragraphs.paragraphs_type.about_tab
+  module:
+    - text
+id: paragraph.about_tab.default
+targetEntityType: paragraph
+bundle: about_tab
+mode: default
+content:
+  field_about_tab_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tab_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

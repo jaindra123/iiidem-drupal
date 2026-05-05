@@ -1,0 +1,29 @@
+uuid: dd5a051e-4391-4d0b-982d-8cd1fff5ed64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_trainer
+    - node.type.trainer
+    - node.type.trainning
+id: node.trainning.field_trainer
+field_name: field_trainer
+entity_type: node
+bundle: trainning
+label: Trainer/Expert
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      trainer: trainer
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

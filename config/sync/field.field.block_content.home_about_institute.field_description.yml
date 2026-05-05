@@ -1,0 +1,22 @@
+uuid: 94e3a186-9d53-4941-aefc-1bb05ecfe0d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_about_institute
+    - field.storage.block_content.field_description
+  module:
+    - text
+id: block_content.home_about_institute.field_description
+field_name: field_description
+entity_type: block_content
+bundle: home_about_institute
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

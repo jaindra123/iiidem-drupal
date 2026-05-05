@@ -1,0 +1,8 @@
+uuid: 4ce129d2-b38e-4c23-8c74-bc084c9b1ffb
+langcode: en
+status: true
+dependencies: {  }
+id: international_organizations
+label: 'INTERNATIONAL ORGANIZATIONS'
+revision: false
+description: 'COLLABORATION & PARTNERSHIPS WITH SOME INTERNATIONAL ORGANIZATIONS & INSTITUTION'

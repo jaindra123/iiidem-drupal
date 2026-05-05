@@ -1,0 +1,23 @@
+uuid: 7071089e-4ad9-46d9-ad98-71ef36478913
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+  theme:
+    - iiidem_theme
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: iiidem_theme_syndicate
+theme: iiidem_theme
+region: header
+weight: 4
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

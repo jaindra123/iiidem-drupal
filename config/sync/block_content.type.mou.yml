@@ -1,0 +1,8 @@
+uuid: ff646cd3-2839-44c1-b5ca-0e823d5ef2fd
+langcode: en
+status: true
+dependencies: {  }
+id: mou
+label: Mou
+revision: false
+description: 'MOUs WITH ADMINISTRATIVE TRAINING INSTITUTES (ATIs)'

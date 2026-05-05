@@ -1,0 +1,18 @@
+uuid: 14431010-21fb-42b8-bb4d-9279c17e8ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.training_category
+id: taxonomy_term.training_category.name
+field_name: name
+entity_type: taxonomy_term
+bundle: training_category
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

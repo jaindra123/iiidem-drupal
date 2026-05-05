@@ -1,0 +1,23 @@
+uuid: 64174442-3e04-424a-948a-a4dc71734fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.global_footprint
+    - field.storage.block_content.field_total_region_countries
+id: block_content.global_footprint.field_total_region_countries
+field_name: field_total_region_countries
+entity_type: block_content
+bundle: global_footprint
+label: 'Total Countries'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

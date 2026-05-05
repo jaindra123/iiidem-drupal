@@ -1,0 +1,20 @@
+uuid: 25d415c5-1dc1-4c6c-a295-ea4f11476907
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.expertise
+  module:
+    - path
+id: taxonomy_term.expertise.path
+field_name: path
+entity_type: taxonomy_term
+bundle: expertise
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,30 @@
+uuid: 571d8757-fc87-42a6-8b87-7817398a66be
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:home_about_institute:cc8839b6-3cc0-47b9-9f6a-aad66bfcbcc5'
+  module:
+    - block_content
+    - system
+  theme:
+    - iiidem_theme
+id: iiidem_theme_blockdescriptionddcdcjjjjjjjj
+theme: iiidem_theme
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:cc8839b6-3cc0-47b9-9f6a-aad66bfcbcc5'
+settings:
+  id: 'block_content:cc8839b6-3cc0-47b9-9f6a-aad66bfcbcc5'
+  label: 'Block descriptionddcdcjjjjjjjj'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

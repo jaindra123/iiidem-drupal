@@ -1,0 +1,36 @@
+uuid: 0a5a2429-c4ba-4a8b-810c-36a183dde4c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_tab.field_about_tab_content
+    - field.field.paragraph.about_tab.field_tab_title
+    - paragraphs.paragraphs_type.about_tab
+  module:
+    - text
+id: paragraph.about_tab.default
+targetEntityType: paragraph
+bundle: about_tab
+mode: default
+content:
+  field_about_tab_content:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_tab_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,49 @@
+uuid: a9865b76-731f-47c3-b096-1a9d858a1b26
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mou
+    - field.storage.block_content.field_admin_institutes
+    - paragraphs.paragraphs_type.admin_training_institute_logo
+  module:
+    - entity_reference_revisions
+id: block_content.mou.field_admin_institutes
+field_name: field_admin_institutes
+entity_type: block_content
+bundle: mou
+label: 'Administrative institutes logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      admin_training_institute_logo: admin_training_institute_logo
+    negate: 0
+    target_bundles_drag_drop:
+      about_tab:
+        weight: 9
+        enabled: false
+      admin_training_institute_logo:
+        weight: 8
+        enabled: true
+      international_organization_logo:
+        weight: 10
+        enabled: false
+      partner_logo:
+        weight: 11
+        enabled: false
+      region_item:
+        weight: 12
+        enabled: false
+      slide:
+        weight: 13
+        enabled: false
+      statistic_item:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

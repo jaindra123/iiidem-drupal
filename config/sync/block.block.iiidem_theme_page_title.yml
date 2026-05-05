@@ -1,0 +1,20 @@
+uuid: 2cdd4eb4-73f9-42cf-b8f5-16c74795993c
+langcode: en
+status: false
+dependencies:
+  theme:
+    - iiidem_theme
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: iiidem_theme_page_title
+theme: iiidem_theme
+region: header
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 7da714c7-dca7-4d35-b8d0-86fa3ed3afcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.training_list
+  module:
+    - views
+  theme:
+    - iiidem_theme
+id: iiidem_theme_views_block__training_list_block_1
+theme: iiidem_theme
+region: homepage_training
+weight: 0
+provider: null
+plugin: 'views_block:training_list-block_1'
+settings:
+  id: 'views_block:training_list-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

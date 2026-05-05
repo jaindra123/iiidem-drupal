@@ -1,0 +1,47 @@
+uuid: 227a02e1-e7cf-4105-bcf3-3e5fee4bd013
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.partners_slider
+    - field.field.block_content.partners_slider.body
+    - field.field.block_content.partners_slider.field_partner_section_background
+    - field.field.block_content.partners_slider.field_partners_slider
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+id: block_content.partners_slider.default
+targetEntityType: block_content
+bundle: partners_slider
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_partner_section_background:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_partners_slider:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

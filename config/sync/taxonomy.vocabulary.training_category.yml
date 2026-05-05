@@ -1,0 +1,9 @@
+uuid: aa55d4cd-fbd6-44af-a19a-797613577372
+langcode: en
+status: true
+dependencies: {  }
+name: 'Training Category'
+vid: training_category
+description: null
+weight: 0
+new_revision: false

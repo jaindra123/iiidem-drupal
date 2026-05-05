@@ -1,0 +1,61 @@
+uuid: de4e7b65-7091-496d-80cc-9c1e5635b372
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.partners_slider
+    - field.field.block_content.partners_slider.body
+    - field.field.block_content.partners_slider.field_partner_section_background
+    - field.field.block_content.partners_slider.field_partners_slider
+    - image.style.thumbnail
+  module:
+    - image
+    - paragraphs
+id: block_content.partners_slider.default
+targetEntityType: block_content
+bundle: partners_slider
+mode: default
+content:
+  field_partner_section_background:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_partners_slider:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  body: true

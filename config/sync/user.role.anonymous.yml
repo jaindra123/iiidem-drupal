@@ -1,0 +1,61 @@
+uuid: aab67c9c-7692-4606-b3d2-c685b43cf34f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - node.type.event
+    - node.type.page
+    - node.type.registration
+    - node.type.trainer
+    - node.type.trainning
+    - taxonomy.vocabulary.expertise
+    - taxonomy.vocabulary.language
+    - taxonomy.vocabulary.region
+    - taxonomy.vocabulary.topic
+    - taxonomy.vocabulary.training_category
+  module:
+    - comment
+    - config_translation
+    - contact
+    - content_translation
+    - filter
+    - language
+    - locale
+    - media
+    - paragraphs
+    - search
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'administer content translation'
+  - 'administer languages'
+  - 'create content translations'
+  - 'delete content translations'
+  - 'search content'
+  - 'translate any entity'
+  - 'translate configuration'
+  - 'translate editable entities'
+  - 'translate event node'
+  - 'translate expertise taxonomy_term'
+  - 'translate interface'
+  - 'translate language taxonomy_term'
+  - 'translate page node'
+  - 'translate paragraph'
+  - 'translate region taxonomy_term'
+  - 'translate registration node'
+  - 'translate topic taxonomy_term'
+  - 'translate trainer node'
+  - 'translate training_category taxonomy_term'
+  - 'translate trainning node'
+  - 'update content translations'
+  - 'use text format restricted_html'
+  - 'view media'

@@ -1,0 +1,37 @@
+uuid: 47b2982c-0381-48f2-8eaf-0210538c3d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_about_institute
+    - field.storage.block_content.field_statistics
+    - paragraphs.paragraphs_type.statistic_item
+  module:
+    - entity_reference_revisions
+id: block_content.home_about_institute.field_statistics
+field_name: field_statistics
+entity_type: block_content
+bundle: home_about_institute
+label: Statistics
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      statistic_item: statistic_item
+    negate: 0
+    target_bundles_drag_drop:
+      about_tab:
+        weight: 4
+        enabled: false
+      slide:
+        weight: 5
+        enabled: false
+      statistic_item:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions

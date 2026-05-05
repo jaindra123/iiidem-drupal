@@ -1,0 +1,10 @@
+uuid: 5c0e9be1-1917-4d31-a392-ea2ca0bbbd5c
+langcode: en
+status: true
+dependencies: {  }
+id: international_organization_logo
+label: 'International Organization Logo'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

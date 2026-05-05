@@ -1,0 +1,46 @@
+uuid: 8b4e4a45-dc5c-4700-afcf-38958b572ab5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.international_organizations
+    - field.storage.block_content.field_partnership_logo
+    - paragraphs.paragraphs_type.international_organization_logo
+  module:
+    - entity_reference_revisions
+id: block_content.international_organizations.field_partnership_logo
+field_name: field_partnership_logo
+entity_type: block_content
+bundle: international_organizations
+label: 'Partnership logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      international_organization_logo: international_organization_logo
+    negate: 0
+    target_bundles_drag_drop:
+      about_tab:
+        weight: 8
+        enabled: false
+      international_organization_logo:
+        weight: 7
+        enabled: true
+      partner_logo:
+        weight: 9
+        enabled: false
+      region_item:
+        weight: 10
+        enabled: false
+      slide:
+        weight: 11
+        enabled: false
+      statistic_item:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

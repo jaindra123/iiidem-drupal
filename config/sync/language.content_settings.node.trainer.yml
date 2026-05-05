@@ -1,0 +1,18 @@
+uuid: 6943cdf8-c21c-4d8e-91f9-f09968c4c1d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.trainer
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.trainer
+target_entity_type_id: node
+target_bundle: trainer
+default_langcode: site_default
+language_alterable: true

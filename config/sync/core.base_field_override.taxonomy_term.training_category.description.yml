@@ -1,0 +1,21 @@
+uuid: 6f498167-2abb-413d-9307-6ba6405e2cac
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.training_category
+  module:
+    - text
+id: taxonomy_term.training_category.description
+field_name: description
+entity_type: taxonomy_term
+bundle: training_category
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

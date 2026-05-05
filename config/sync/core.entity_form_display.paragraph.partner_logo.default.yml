@@ -1,0 +1,26 @@
+uuid: b8d64931-6bcb-4948-adb3-5cd32d6e4bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.partner_logo.field_partner_logo_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.partner_logo
+  module:
+    - image
+id: paragraph.partner_logo.default
+targetEntityType: paragraph
+bundle: partner_logo
+mode: default
+content:
+  field_partner_logo_image:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

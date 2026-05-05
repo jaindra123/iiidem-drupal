@@ -1,0 +1,19 @@
+uuid: 2dbde24a-cac5-415b-a533-36a24a2a083c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.region_item
+id: paragraph.region_item.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: region_item
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

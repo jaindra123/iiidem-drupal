@@ -1,0 +1,18 @@
+uuid: e0b06d11-2be4-4dfe-bcbe-29adf95f9b71
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.trainning
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.trainning
+target_entity_type_id: node
+target_bundle: trainning
+default_langcode: site_default
+language_alterable: true

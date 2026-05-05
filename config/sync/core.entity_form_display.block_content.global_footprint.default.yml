@@ -1,0 +1,69 @@
+uuid: 5521ab07-addf-4e3f-a60e-98bfc48e40da
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.global_footprint
+    - field.field.block_content.global_footprint.body
+    - field.field.block_content.global_footprint.field_footprint_image
+    - field.field.block_content.global_footprint.field_total_countries
+    - field.field.block_content.global_footprint.field_total_region_countries
+    - image.style.thumbnail
+  module:
+    - image
+    - paragraphs
+id: block_content.global_footprint.default
+targetEntityType: block_content
+bundle: global_footprint
+mode: default
+content:
+  field_footprint_image:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_total_countries:
+    type: paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_total_region_countries:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  body: true

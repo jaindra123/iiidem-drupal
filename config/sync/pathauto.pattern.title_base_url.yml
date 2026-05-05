@@ -1,0 +1,22 @@
+uuid: f376b31a-e5a4-4ec6-8700-38fcea56e4d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: title_base_url
+label: 'Title base url'
+type: 'canonical_entities:node'
+pattern: 'events/[node:title]'
+selection_criteria:
+  0235bfbc-1606-4c06-a104-6cee2be0d7cf:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 0235bfbc-1606-4c06-a104-6cee2be0d7cf
+    context_mapping:
+      node: node
+    bundles:
+      event: event
+selection_logic: and
+weight: -5
+relationships: {  }

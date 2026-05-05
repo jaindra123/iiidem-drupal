@@ -1,0 +1,24 @@
+uuid: 694e9d0a-7081-4db7-87ab-92f8cb97af47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.registration
+  module:
+    - text
+id: node.registration.body
+field_name: body
+entity_type: node
+bundle: registration
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

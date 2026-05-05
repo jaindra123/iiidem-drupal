@@ -1,0 +1,22 @@
+uuid: 1b0aa62f-5422-4f24-b63f-b037acb6b60a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.expertise
+id: taxonomy_term.expertise.status
+field_name: status
+entity_type: taxonomy_term
+bundle: expertise
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

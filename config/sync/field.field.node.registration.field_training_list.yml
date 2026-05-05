@@ -1,0 +1,29 @@
+uuid: ad401d8a-cb5a-4aa7-8dd9-eb7df37ce3a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_list
+    - node.type.registration
+    - node.type.trainning
+id: node.registration.field_training_list
+field_name: field_training_list
+entity_type: node
+bundle: registration
+label: Training
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      trainning: trainning
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: d7c826cf-d051-46eb-b9b4-21e48f46c84b
+langcode: en
+status: true
+dependencies: {  }
+name: Expertise
+vid: expertise
+description: null
+weight: 0
+new_revision: false

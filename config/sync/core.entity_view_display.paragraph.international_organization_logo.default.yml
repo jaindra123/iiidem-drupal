@@ -1,0 +1,26 @@
+uuid: 8245d04a-d63d-4f65-8abf-27c6d87b2615
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.international_organization_logo.field_organization_logo
+    - paragraphs.paragraphs_type.international_organization_logo
+  module:
+    - image
+id: paragraph.international_organization_logo.default
+targetEntityType: paragraph
+bundle: international_organization_logo
+mode: default
+content:
+  field_organization_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

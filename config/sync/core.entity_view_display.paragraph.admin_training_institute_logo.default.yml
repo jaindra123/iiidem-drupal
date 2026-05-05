@@ -1,0 +1,26 @@
+uuid: bf5ee6b4-1e30-4e3e-8942-183d405ae42a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.admin_training_institute_logo.field_administrative_logo
+    - paragraphs.paragraphs_type.admin_training_institute_logo
+  module:
+    - image
+id: paragraph.admin_training_institute_logo.default
+targetEntityType: paragraph
+bundle: admin_training_institute_logo
+mode: default
+content:
+  field_administrative_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

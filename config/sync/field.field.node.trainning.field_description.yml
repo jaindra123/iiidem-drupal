@@ -1,0 +1,19 @@
+uuid: c433ab38-6c93-4f83-ab8a-bc150f9a9154
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.trainning
+id: node.trainning.field_description
+field_name: field_description
+entity_type: node
+bundle: trainning
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

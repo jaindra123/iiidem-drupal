@@ -1,0 +1,11 @@
+uuid: f18e957a-2264-463b-8535-ea6f730db2dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.international_organizations
+id: block_content.international_organizations
+target_entity_type_id: block_content
+target_bundle: international_organizations
+default_langcode: site_default
+language_alterable: false

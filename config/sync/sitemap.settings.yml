@@ -1,0 +1,78 @@
+_core:
+  default_config_hash: GUKBlXIBQ2d0H8Q7M_Rqn1Q93tRxLPfs9cG-VeQC9NI
+page_title: Sitemap
+path: /sitemap
+message:
+  value: ''
+  format: plain_text
+plugins:
+  frontpage:
+    enabled: false
+  'menu:main':
+    base_plugin: menu
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Main navigation'
+      show_disabled: false
+      menu_depth: 9
+    id: 'menu:main'
+    provider: sitemap
+  'vocabulary:expertise':
+    base_plugin: vocabulary
+    enabled: true
+    weight: 0
+    settings:
+      title: Expertise
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:expertise'
+    provider: sitemap
+  'vocabulary:topic':
+    base_plugin: vocabulary
+    enabled: true
+    weight: 0
+    settings:
+      title: Topic
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:topic'
+    provider: sitemap
+  'vocabulary:training_category':
+    base_plugin: vocabulary
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Training Category'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:training_category'
+    provider: sitemap
+include_css: true

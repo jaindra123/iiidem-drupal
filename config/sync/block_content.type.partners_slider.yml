@@ -1,0 +1,8 @@
+uuid: 767dc2d1-9209-4f42-a525-476fab31d546
+langcode: en
+status: true
+dependencies: {  }
+id: partners_slider
+label: 'Partners Slider'
+revision: false
+description: 'COLLABORATION & PARTNERSHIPS WITH OTHER ELECTION MANAGEMENT BODIES (EMBs)'

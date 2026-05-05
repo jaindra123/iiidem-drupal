@@ -1,0 +1,34 @@
+uuid: 2f606650-d4fa-4de0-a709-441d1b216f85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_about_tabs
+    - node.type.page
+    - paragraphs.paragraphs_type.about_tab
+  module:
+    - entity_reference_revisions
+id: node.page.field_about_tabs
+field_name: field_about_tabs
+entity_type: node
+bundle: page
+label: 'About Page Tab'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      about_tab: about_tab
+    negate: 0
+    target_bundles_drag_drop:
+      about_tab:
+        weight: 3
+        enabled: true
+      slide:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

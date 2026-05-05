@@ -1,0 +1,38 @@
+uuid: c5d74251-e9ae-455b-894a-094a37db9b06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_administrative_logo
+    - paragraphs.paragraphs_type.admin_training_institute_logo
+  module:
+    - image
+id: paragraph.admin_training_institute_logo.field_administrative_logo
+field_name: field_administrative_logo
+entity_type: paragraph
+bundle: admin_training_institute_logo
+label: 'ADMINISTRATIVE Logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

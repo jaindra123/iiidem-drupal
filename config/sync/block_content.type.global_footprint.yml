@@ -1,0 +1,8 @@
+uuid: 37f04d99-dd76-4259-a179-94ddf7fffc99
+langcode: en
+status: true
+dependencies: {  }
+id: global_footprint
+label: 'Global Footprint'
+revision: false
+description: 'IIIDEM’S INTERNATIONAL TRAINING FOOTPRINT'

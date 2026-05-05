@@ -1,0 +1,22 @@
+uuid: d85c547c-a617-435c-96be-1b43247bc393
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: training_title_url
+label: 'training title url'
+type: 'canonical_entities:node'
+pattern: 'training/[node:title]'
+selection_criteria:
+  5fbd04e9-f5f8-43f8-a674-acd0cdb5a4db:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5fbd04e9-f5f8-43f8-a674-acd0cdb5a4db
+    context_mapping:
+      node: node
+    bundles:
+      trainning: trainning
+selection_logic: and
+weight: -5
+relationships: {  }

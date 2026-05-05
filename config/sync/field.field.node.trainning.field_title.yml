@@ -1,0 +1,19 @@
+uuid: 392420f5-591d-4f69-86de-d097bd2e7fc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.trainning
+id: node.trainning.field_title
+field_name: field_title
+entity_type: node
+bundle: trainning
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

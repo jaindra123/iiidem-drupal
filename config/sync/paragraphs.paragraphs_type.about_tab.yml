@@ -1,0 +1,10 @@
+uuid: 1ea20f1d-e950-445a-8bc0-f19b90caa080
+langcode: en
+status: true
+dependencies: {  }
+id: about_tab
+label: 'About Tab'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

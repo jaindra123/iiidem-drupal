@@ -1,0 +1,44 @@
+uuid: 122b9009-f337-40ed-ae36-c6cc41dabb29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.statistic_item.field_icon
+    - field.field.paragraph.statistic_item.field_label
+    - field.field.paragraph.statistic_item.field_number
+    - paragraphs.paragraphs_type.statistic_item
+  module:
+    - image
+id: paragraph.statistic_item.default
+targetEntityType: paragraph
+bundle: statistic_item
+mode: default
+content:
+  field_icon:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

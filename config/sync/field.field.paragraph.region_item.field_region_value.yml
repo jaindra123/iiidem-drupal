@@ -1,0 +1,23 @@
+uuid: 9998f967-ffcd-4152-85e1-a1b553916c78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_region_value
+    - paragraphs.paragraphs_type.region_item
+id: paragraph.region_item.field_region_value
+field_name: field_region_value
+entity_type: paragraph
+bundle: region_item
+label: 'Region Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

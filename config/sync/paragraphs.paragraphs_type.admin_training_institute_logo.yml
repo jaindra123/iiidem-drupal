@@ -1,0 +1,10 @@
+uuid: 13bd97e1-6e05-4b07-9be2-9692a678cb16
+langcode: en
+status: true
+dependencies: {  }
+id: admin_training_institute_logo
+label: 'Administrative training institutes logo'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

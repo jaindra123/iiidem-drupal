@@ -1,0 +1,39 @@
+uuid: 994379ad-1c4a-4834-99e6-aec6cd363339
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.registration.body
+    - field.field.node.registration.field_email
+    - field.field.node.registration.field_full_name
+    - field.field.node.registration.field_phone
+    - field.field.node.registration.field_training_list
+    - node.type.registration
+  module:
+    - text
+    - user
+id: node.registration.teaser
+targetEntityType: node
+bundle: registration
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_email: true
+  field_full_name: true
+  field_phone: true
+  field_training_list: true
+  langcode: true

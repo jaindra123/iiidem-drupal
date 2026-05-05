@@ -1,0 +1,20 @@
+uuid: b28ceeee-4169-4a5d-945a-6412c46a8907
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_total_region_countries
+field_name: field_total_region_countries
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

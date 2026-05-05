@@ -1,0 +1,23 @@
+uuid: feaec856-1f0e-4e53-93bd-fe043e41ed26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_max_participants
+    - node.type.event
+id: node.event.field_max_participants
+field_name: field_max_participants
+entity_type: node
+bundle: event
+label: 'Max Participants'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

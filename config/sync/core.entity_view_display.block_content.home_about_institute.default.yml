@@ -1,0 +1,59 @@
+uuid: 2486e1f7-fa0b-4c7d-b52b-27463d647d85
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_about_institute
+    - field.field.block_content.home_about_institute.field_description
+    - field.field.block_content.home_about_institute.field_home_iiidem_image
+    - field.field.block_content.home_about_institute.field_image
+    - field.field.block_content.home_about_institute.field_statistics
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+id: block_content.home_about_institute.default
+targetEntityType: block_content
+bundle: home_about_institute
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_home_iiidem_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_statistics:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  langcode: true

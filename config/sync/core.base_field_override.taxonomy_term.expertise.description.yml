@@ -1,0 +1,21 @@
+uuid: a9c68587-dc63-48a2-ba5b-d074da2919b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.expertise
+  module:
+    - text
+id: taxonomy_term.expertise.description
+field_name: description
+entity_type: taxonomy_term
+bundle: expertise
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

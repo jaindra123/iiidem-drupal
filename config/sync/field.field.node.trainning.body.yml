@@ -1,0 +1,24 @@
+uuid: b1e8ea2d-9b63-4554-b2d0-cacd0a3a133d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.trainning
+  module:
+    - text
+id: node.trainning.body
+field_name: body
+entity_type: node
+bundle: trainning
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -1,0 +1,8 @@
+uuid: 1b9aedfb-1255-49f4-9725-a2d38b367f58
+langcode: en
+status: true
+dependencies: {  }
+id: home_about_institute
+label: 'Home About Institute'
+revision: false
+description: null

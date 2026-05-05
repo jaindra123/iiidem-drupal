@@ -1,0 +1,25 @@
+uuid: 4b8e59c3-71a6-43c0-9809-5d1347c5b3c2
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - iiidem_theme
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: iiidem_theme_site_branding
+theme: iiidem_theme
+region: header
+weight: 5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

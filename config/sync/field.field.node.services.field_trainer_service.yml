@@ -1,0 +1,29 @@
+uuid: 20858fde-d609-4cc3-926b-d0a8891a7f66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_trainer_service
+    - node.type.services
+    - node.type.trainer
+id: node.services.field_trainer_service
+field_name: field_trainer_service
+entity_type: node
+bundle: services
+label: Trainer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      trainer: trainer
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

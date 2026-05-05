@@ -1,0 +1,30 @@
+uuid: 5146aad0-5440-4bb3-b373-139f6d7d7fb3
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:global_footprint:3e4f73e0-36ea-4692-a8df-9502749ff8d4'
+  module:
+    - block_content
+    - system
+  theme:
+    - iiidem_theme
+id: iiidem_theme_trainingfootprintcountries
+theme: iiidem_theme
+region: homepage_image_gallery
+weight: 0
+provider: null
+plugin: 'block_content:3e4f73e0-36ea-4692-a8df-9502749ff8d4'
+settings:
+  id: 'block_content:3e4f73e0-36ea-4692-a8df-9502749ff8d4'
+  label: 'Training footprint countries'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,0 +1,21 @@
+uuid: f2013346-a603-49e8-ad0e-103b83bc453f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.photo_gallery
+  module:
+    - datetime
+id: node.photo_gallery.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: photo_gallery
+label: 'Event Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

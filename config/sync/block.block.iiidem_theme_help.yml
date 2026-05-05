@@ -1,0 +1,22 @@
+uuid: a9d86e73-9113-4402-b405-9f56eed022bc
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - iiidem_theme
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: iiidem_theme_help
+theme: iiidem_theme
+region: header
+weight: 2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }
