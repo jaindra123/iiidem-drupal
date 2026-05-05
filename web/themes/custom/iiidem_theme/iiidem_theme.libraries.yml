@@ -1,0 +1,28 @@
+global-styling:
+  css:
+    theme:
+      css/bootstrap.min.css: {}
+      lib/animate/animate.min.css: {}
+      lib/owlcarousel/assets/owl.carousel.min.css: {}
+      css/style.css: {}
+      css/style_gov.css: {}
+      https://use.fontawesome.com/releases/v5.15.4/css/all.css: { type: external }
+      https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css: { type: external }
+      https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css: { type: external }
+
+  js:
+    https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js: { type: external }
+    https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js: { type: external }
+
+    lib/wow/wow.min.js: {}
+    lib/easing/easing.min.js: {}
+    lib/waypoints/waypoints.min.js: {}
+    lib/counterup/counterup.min.js: {}
+    lib/owlcarousel/owl.carousel.min.js: {}
+
+    js/script.js: {}
+    js/main.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/once

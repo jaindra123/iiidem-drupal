@@ -1,0 +1,4 @@
+name: Header
+props:
+  site_name:
+    type: string

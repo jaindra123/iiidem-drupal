@@ -1,0 +1,38 @@
+<div id="page-loader" class="page-loader d-none">
+  <div class="loader-spinner"></div>
+</div>
+
+<section class="iiidem-gallery py-5">
+  <div class="container">
+    <!-- Heading -->
+    <div class="gallery-header text-center mb-5">
+      <div class="title-line"></div>
+      <h2>IIIDEM VIDEO GALLERY</h2>
+      <div class="title-line"></div>
+    </div>
+
+   
+    <div class="row g-4">
+      {% for row in rows %}
+        {% set node = row.content['#row']._entity %}
+
+        <div class="col-lg-4 col-md-6 gallery-item {{ loop.index > 3 ? 'hidden' }}">
+          <iframe width="100%" height="250"
+            src="{{ node.field_video_url.0.uri|replace({'watch?v=':'embed/'}) }}"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+      {% endfor %}
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-4">
+      <button id="load-more-video" class="btn btn-primary">
+        <span class="btn-text">Load More Videoes</span>
+        <span class="loader d-none"></span>
+      </button>
+    </div>
+
+  </div>
+</section>

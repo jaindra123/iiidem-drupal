@@ -1,0 +1,79 @@
+{# Get current timestamp ONCE #}
+{% set now = "now"|date("U") %}
+
+<div class="events-wrapper">
+  <div class="container">
+  {# ================= UPCOMING EVENTS ================= #}
+  <section class="events-section upcoming">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div class="cards-grid">
+      {% for row in rows %}
+        {% set event = row.content['#row']._entity %}
+
+        {% if event.field_end_date.end_value is defined %}
+          {% set end_date = event.field_end_date.end_value|date("U") %}
+        {% else %}
+          {% set end_date = event.field_end_date.value|date("U") %}
+        {% endif %}
+
+        {% if end_date >= now %}
+          <div class="event-card upcoming-card">
+            <h3>
+              <a href="{{ path('entity.node.canonical', {'node': event.id()}) }}">
+                {{ event.title.value }}
+              </a>
+            </h3>
+            <div class="event-meta">
+              <p><span class="label">Location:</span> {{ event.field_location.value }}</p>
+              <p><span class="label">Start Date:</span> {{ event.field_start_date.value }}</p>
+              <p><span class="label">End Date:</span> {{ event.field_end_date.value }}</p>
+              <p>
+                {% set image_item = event.field_event_image.0 %}
+                {% set file = image_item.entity %}
+                {% if file %}
+                  <img  src="{{ file_url(file.uri.value) }}"  alt="{{ image_item.alt }}"  width="50%"  >
+                {% endif %}
+              </p>
+
+              <p><strong>Training:</strong></p>
+              <ul>
+                {% for item in event.field_training %}
+                  <li><a href="{{ path('entity.node.canonical', {'node': item.target_id}) }}"> {{ item.entity.label }} </a> </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </section>
+
+
+  {# ================= PAST EVENTS ================= #}
+  <section class="events-section past">
+    <h2 class="section-title">Past Events</h2>
+    <div class="cards-grid">
+
+      {% for row in rows %}
+        {% set event = row.content['#row']._entity %}
+
+        {% if event.field_end_date.end_value is defined %}
+          {% set end_date = event.field_end_date.end_value|date("U") %}
+        {% else %}
+          {% set end_date = event.field_end_date.value|date("U") %}
+        {% endif %}
+
+        {% if end_date < now %}
+          <div class="event-card past-card">
+            {{ row.content }}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </section>
+
+</div>
+</div>

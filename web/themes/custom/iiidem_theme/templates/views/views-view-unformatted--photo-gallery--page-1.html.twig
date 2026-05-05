@@ -1,0 +1,41 @@
+
+<div id="page-loader" class="page-loader d-none">
+  <div class="loader-spinner"></div>
+</div>
+<section class="iiidem-gallery py-5">
+  <div class="container">
+    <!-- Heading -->
+    <div class="gallery-header text-center mb-5">
+      <div class="title-line"></div>
+      <h2>IIIDEM PHOTO GALLERY</h2>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="row g-4 gallery-wrapper">
+      {% for row in rows %}
+        {% set node = row.content['#row']._entity %}
+        
+        <div class="col-lg-4 col-md-6 col-sm-12 gallery-item {{ loop.index > 3 ? 'hidden' }}">
+          <div class="gallery-item-inner">
+            <a href="{{ path('entity.node.canonical', {'node': node.id()}) }}">
+              {% if node.field_gallery_images.entity %}
+                <img src="{{ file_url(node.field_gallery_images.entity.fileuri) }}"
+                     alt="{{ node.label() }}" class="gallery-img">
+              {% endif %}
+            </a>
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-4">
+      <button id="load-more" class="btn btn-primary">
+        <span class="btn-text">Load More Images</span>
+        <span class="loader d-none"></span>
+      </button>
+    </div>
+
+  </div>
+</section>

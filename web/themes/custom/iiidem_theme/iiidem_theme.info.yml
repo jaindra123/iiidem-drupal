@@ -1,0 +1,18 @@
+name: IIIDEM Theme
+type: theme
+description: 'Custom theme using SDC'
+core_version_requirement: ^11
+base theme: stable9
+
+libraries:
+  - iiidem_theme/global-styling
+
+regions:
+  topbar: Top Bar
+  header: Header
+  primary_menu: Primary Menu
+  content: Content
+  homepage_services: Homepage Services
+  homepage_training: Homepage Training
+  homepage_image_gallery: Homepage Image Gallery
+  footer: Footer

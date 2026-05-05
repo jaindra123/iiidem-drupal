@@ -1,0 +1,20 @@
+{# paragraph--region-item.html.twig #}
+
+{% set name = paragraph.field_region_name.value %}
+{% set value = paragraph.field_region_value.value %}
+{% set color = paragraph.field_color.value ?: 'blue' %}
+
+<div class="chart-list">
+  <div class="chart-card">
+    <div class="label"> {{ name }} </div>
+
+    <div class="progress">
+      <div class="fill {{ color }}" style="width: {{ value }}%"></div>
+    </div>
+
+    <div class="value">
+      {{ value }}
+    </div>
+
+  </div>
+</div>

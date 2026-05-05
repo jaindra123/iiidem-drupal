@@ -1,0 +1,13 @@
+name: Card
+description: Basic card component
+
+assets:
+  css:
+    component:
+      card.css: {}
+
+props:
+  title:
+    type: string
+  description:
+    type: string

@@ -1,0 +1,16 @@
+.slider {
+  width: 400px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+}
+
+.slide {
+  min-width: 400px;
+}
+
+.slide img {
+  width: 100%;
+}

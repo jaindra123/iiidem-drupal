@@ -1,0 +1,18 @@
+
+{% include '@iiidem_theme/components/header/header.twig' with {
+  logo: logo,
+  site_name: site_name,
+  page: page
+} %}
+
+<main class="iiidem-sitemap container py-5">
+
+  <h1 class="text-center mb-4">Sitemap</h1>
+
+  <div class="sitemap-content">
+    {{ page.content }}
+  </div>
+
+</main>
+
+{% include '@iiidem_theme/components/footer/footer.twig' %}

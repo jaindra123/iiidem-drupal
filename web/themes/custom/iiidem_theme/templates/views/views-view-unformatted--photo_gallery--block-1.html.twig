@@ -1,0 +1,23 @@
+<section class="gov-work-section py-5">
+  <div class="container">
+
+    <div class="row g-4">
+      {% for row in rows %}
+        {% set node = row.content['#row']._entity %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="gallery-item">
+            <a href="{{ path('entity.node.canonical', {'node': node.id()}) }}">
+              {% if node.field_gallery_images.entity %}
+                <img src="{{ file_url(node.field_gallery_images.entity.fileuri) }}"
+                  alt="{{ node.label() }}" class="gallery-img" >
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+

@@ -1,0 +1,44 @@
+<ul class="navbar-nav ms-auto py-0">
+
+{% for item in items %}
+
+  {% if item.below %}
+    <li class="nav-item dropdown">
+
+      <a href="{{ item.url }}"
+         class="nav-link dropdown-toggle {{ item.in_active_trail ? 'active' }}"
+         data-bs-toggle="dropdown"
+         aria-expanded="false">
+
+        {{ item.title }}
+      </a>
+
+      <ul class="dropdown-menu m-0">
+
+        {% for child in item.below %}
+          <li>
+            <a href="{{ child.url }}"
+               class="dropdown-item {{ child.in_active_trail ? 'active' }}">
+              {{ child.title }}
+            </a>
+          </li>
+        {% endfor %}
+
+      </ul>
+
+    </li>
+
+  {% else %}
+
+    <li class="nav-item">
+      <a href="{{ item.url }}"
+         class="nav-link {{ item.in_active_trail ? 'active' }}">
+        {{ item.title }}
+      </a>
+    </li>
+
+  {% endif %}
+
+{% endfor %}
+
+</ul>

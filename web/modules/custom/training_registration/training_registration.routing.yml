@@ -1,0 +1,19 @@
+training_registration.form:
+  path: '/training/{node}/register'
+  defaults:
+    _form: '\Drupal\training_registration\Form\TrainingRegistrationForm'
+    _title: 'Training Registration'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+training_registration.success:
+  path: '/registration-success'
+  defaults:
+    _controller: '\Drupal\training_registration\Controller\SuccessController::content'
+    _title: 'Registration Successful'
+  requirements:
+    _permission: 'access content'

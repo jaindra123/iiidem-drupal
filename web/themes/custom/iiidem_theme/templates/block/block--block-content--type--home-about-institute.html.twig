@@ -1,0 +1,24 @@
+
+<section class="gov-about">
+
+  <h2>{{ content.body }}</h2>
+
+  <div class="stats-grid">
+
+    {% for item in content.field_statistics['#items'] %}
+      {% set stat = item.entity %}
+
+      <div class="stat-box">
+        <h3>{{ stat.field_tab_title.value }}</h3>
+        <p>{{ stat.field_about_tab_content.value }}</p>
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+  <a href="{{ content.field_button_link.0['#url'] }}">
+    {{ content.field_button_text }}
+  </a>
+
+</section>

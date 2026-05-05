@@ -1,0 +1,36 @@
+{# ===============================
+   SINGLE CARD TEMPLATE
+   (views-view-fields.html.twig)
+=============================== #}
+
+<div class="work-card h-100">
+  {# Dynamic Image #}
+  <div class="work-image">
+    {{ fields.field_service_image.content
+      |replace({'<img ': '<img class="img-fluid w-100 work-img" '})
+      |raw }}
+  </div>
+
+  <div class="work-content">
+    {# Title #}
+    <h3>
+      <a href="{{ fields.view_node.content }}" class="work-title">
+        {{ fields.title.content }}
+      </a>
+    </h3>
+
+    {# Summary / Body #}
+
+    <p>
+      {{ fields.body.content|striptags|trim|slice(0,140) }}
+      <a href="{{ path('entity.node.canonical', {'node': row._entity.id}) }}">
+        Read More →
+      </a>
+    </p>
+
+    {# Button #}
+    <a href="{{ path('entity.node.canonical', {'node': row._entity.id}) }}" class="gov-btn">
+      Explore More
+    </a>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<section class="gov-work-section py-5">
+  <div class="container">
+    {# Heading #}
+    <div class="text-center mb-5">
+      <span class="gov-line"></span>
+      <h2 class="gov-title">OUR WORK</h2>
+      <p class="gov-subtitle">
+        Advancing democracy through training, innovation,
+        public engagement and institutional excellence.
+      </p>
+      <span class="gov-line"></span>
+    </div>
+
+    <div class="row g-4">
+      {% for row in rows %}
+        <div class="col-lg-4 col-md-6">
+          {{ row.content }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+

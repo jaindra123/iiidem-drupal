@@ -1,0 +1,91 @@
+
+<!-- Spinner Start -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+      </div>
+  </div>
+  <!-- Spinner End -->
+  <!-- Topbar Start -->
+  <div class="container-fluid bg-primary px-5 d-none d-lg-block">
+    <div class="row gx-0 align-items-center">
+        <div class="col-lg-5 text-center text-lg-start mb-lg-0">
+            <div class="d-flex">
+                <a href="#" class="text-muted me-4"><i class="fas fa-envelope text-secondary me-2"></i>{{header_mail}}</a>
+                <a href="#" class="text-muted me-0"><i class="fas fa-phone-alt text-secondary me-2"></i>{{contact}}</a>
+            </div>
+        </div>
+        <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+
+              {% if twitter is not empty %}
+                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="{{ twitter }}" target="_blank"
+                 rel="noopener noreferrer"> <i class="fab fa-twitter fw-normal text-secondary"></i>
+                </a>
+              {% endif %}
+
+              {% if facebook is not empty %}
+                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="{{ facebook }}" target="_blank"
+                 rel="noopener noreferrer"> <i class="fab fa-facebook-f fw-normal text-secondary"></i>
+                </a>
+              {% endif %}
+
+              {% if linkedin is not empty %}
+                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="{{ linkedin }}" target="_blank"
+                 rel="noopener noreferrer"> <i class="fab fa-linkedin-in fw-normal text-secondary"></i>
+                </a>
+              {% endif %}
+
+              {% if header_mail is not empty %}
+                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="{{ header_mail }}" target="_blank"
+                 rel="noopener noreferrer"> <i class="fab fa-instagram fw-normal text-secondary"></i>
+                </a>
+              {% endif %}
+
+              {% if youtube is not empty %}
+                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="{{ youtube }}" target="_blank"
+                 rel="noopener noreferrer"> <i class="fab fa-youtube fw-normal text-secondary"></i>
+                </a>
+              {% endif %}
+
+            </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <div class="d-inline-flex align-items-center gap-2">
+              <button onclick="changeFontSize('decrease')" class="btn btn-sm btn-light">A−</button>
+              <button onclick="changeFontSize('reset')" class="btn btn-sm btn-light">A</button>
+              <button onclick="changeFontSize('increase')" class="btn btn-sm btn-light">A+</button>
+              <span class="mx-2 text-white">|</span>
+              {{ page.header }}
+          </div>
+      </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar & Hero Start -->
+<div class="container-fluid nav-bar p-0">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+
+    <!-- Logo Left -->
+    <a href="{{ path('<front>') }}" class="navbar-brand p-0 me-auto">
+      <img src="{{ logo }}" alt="{{ site_name }}" class="img-fluid">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+      <span class="fa fa-bars"></span>
+    </button>
+
+    <!-- Menu Right -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+
+      {{ page.primary_menu }}
+
+    </div>
+
+  </nav>
+</div>
+<!-- Navbar & Hero End -->

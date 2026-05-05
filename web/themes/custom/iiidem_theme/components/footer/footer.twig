@@ -1,0 +1,106 @@
+<footer class="gov-footer">
+  {# Top Footer Section #}
+  <div class="footer-top container">
+    <div class="row g-4">
+
+      {# Column 1 - About Organization #}
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-box">
+          <a href="{{ path('<front>') }}" class="footer-logo">
+            {% if footer_logo_url %}
+              <img src="{{ footer_logo_url }}" alt="Footer Logo" class="img-fluid mb-3">
+            {% endif %}
+          </a>
+
+          <p>
+            {{footer_about}}
+          </p>
+        </div>
+      </div>
+
+      {# Column 2 - Quick Links #}
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-box">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="{{ path('<front>') }}">Home</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/training">Trainings</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      {# Column 3 - Important Links #}
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-box">
+          <h5>Important Links</h5>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-condition">Terms & Conditions</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+            <li><a href="/helpdesk">Helpdesk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      {# Column 4 - Contact Info #}
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-box">
+          <h5>Contact Us</h5>
+          <p>
+            IIIDEM Campus, New Delhi, India
+          </p>
+          <p>
+            Phone: {{ contact }}
+          </p>
+          <p>
+            Email: {{ header_mail }}
+          </p>
+          <p>
+            Office Hours: 9:30 AM - 6:00 PM
+          </p>
+
+          <div class="social-links">
+
+            {% if facebook is not empty %}
+              <a href="{{ facebook }}" target="_blank"> <i class="fab fa-facebook-f"> </i></a>
+            {% endif %}
+
+            {% if twitter is not empty %}
+              <a  href="{{ twitter }}" target="_blank" > <i class="fab fa-x-twitter"></i></a>
+            {% endif %}
+
+            {% if youtube is not empty %}
+              <a  href="{{ youtube }}" target="_blank"> <i class="fab fa-youtube"></i> </a>
+            {% endif %}
+
+            {% if linkedin is not empty %}
+              <a href="{{ linkedin }}" target="_blank"> <i class="fab fa-linkedin-in"></i> </a>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {# Bottom Footer #}
+  <div class="footer-bottom">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+      <p class="mb-1 mb-md-0">
+        © {{ "now"|date("Y") }} {{ site_name }}. All Rights Reserved.
+      </p>
+
+      <p class="mb-0">
+        Last Updated: {{ "now"|date("d M Y") }}
+      </p>
+
+    </div>
+  </div>
+
+</footer>

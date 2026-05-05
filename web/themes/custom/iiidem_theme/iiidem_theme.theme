@@ -1,0 +1,153 @@
+<?php
+
+use Drupal\file\Entity\File;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Cache\CacheableMetadata;
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function iiidem_theme_preprocess_page(array &$variables) {
+
+  /* ============================================================
+   * 1. SERVICES (Load once)
+   * ============================================================ */
+  $config = \Drupal::config('system.site');
+  $file_url_generator = \Drupal::service('file_url_generator');
+  $path_matcher = \Drupal::service('path.matcher');
+  $entity_type_manager = \Drupal::entityTypeManager();
+
+  /* ============================================================
+   * 2. THEME SETTINGS
+   * ============================================================ */
+  $settings = [
+    'header_mail',
+    'facebook',
+    'twitter',
+    'instagram',
+    'linkedin',
+    'youtube',
+    'contact',
+    'footer_about',
+  ];
+
+  foreach ($settings as $setting) {
+    $variables[$setting] = theme_get_setting($setting);
+  }
+
+  /* ============================================================
+   * 3. SITE INFO
+   * ============================================================ */
+  $variables['site_name'] = $config->get('name');
+
+  // Logo
+  if ($logo = theme_get_setting('logo.url')) {
+    $variables['logo'] = $file_url_generator->generateString($logo);
+  }
+
+  /* ============================================================
+   * 4. FOOTER LOGO
+   * ============================================================ */
+  if ($fid = theme_get_setting('footer_logo')) {
+
+    if (is_array($fid)) {
+      $fid = reset($fid);
+    }
+
+    if ($file = File::load($fid)) {
+      $variables['footer_logo_url'] = $file_url_generator
+        ->generateString($file->getFileUri());
+    }
+  }
+
+  /* ============================================================
+   * 5. FRONT PAGE ONLY
+   * ============================================================ */
+  if ($path_matcher->isFrontPage()) {
+
+    $block_storage = $entity_type_manager->getStorage('block_content');
+    $view_builder  = $entity_type_manager->getViewBuilder('block_content');
+
+    /**
+     * Reusable Block Loader
+     */
+    $load_block = function ($type) use ($block_storage) {
+      $blocks = $block_storage->loadByProperties(['type' => $type]);
+      return $blocks ? reset($blocks) : NULL;
+    };
+
+    /* ========================================================
+     * 5.1 HOME ABOUT BLOCK
+     * ======================================================== */
+    if ($block = $load_block('home_about_institute')) {
+      $variables['home_about_block'] = $block;
+    }
+
+    /* ========================================================
+     * 5.2 ABOUT NODE (CONFIG BASED - NO HARDCODE)
+     * ======================================================== */
+    /*$nid = \Drupal::config('iiidem_theme.settings')->get('about_page_nid');
+    if ($nid && ($node = Node::load($nid))) {
+      $variables['about_tabs_node'] = $node;
+    }*/
+    if ($about_node = Node::load(15)) {
+      $variables['about_tabs_node'] = $about_node;
+    }
+
+    /* ========================================================
+     * 5.3 GLOBAL FOOTPRINT BLOCK
+     * ======================================================== */
+    if ($block = $load_block('global_footprint')) {
+      $variables['global_footprint'] = $block;
+      $variables['global_footprint_block'] = $view_builder->view($block, 'full');
+      // Cache metadata
+      $cache = new CacheableMetadata();
+      $cache->addCacheableDependency($block);
+      $cache->applyTo($variables);
+    }
+
+    /* ========================================================
+     * 5.4 PARTNERS SLIDER BLOCK
+     * ======================================================== */
+    if ($block = $load_block('partners_slider')) {
+      $variables['partners'] = $block;
+      $cache = new CacheableMetadata();
+      $cache->addCacheableDependency($block);
+      $cache->applyTo($variables);
+    }
+    /* ========================================================
+     * 5.5 international_organizations  SLIDER BLOCK
+     * ======================================================== */
+    if ($block = $load_block('international_organizations')) {
+      $variables['international_organizations'] = $block;
+      $cache = new CacheableMetadata();
+      $cache->addCacheableDependency($block);
+      $cache->applyTo($variables);
+    }
+    /* ========================================================
+     * 5.6 MOUs WITH ADMINISTRATIVE TRAINING INSTITUTES slider BLOCK
+     * ======================================================== */
+    if ($block = $load_block('mou')) {
+      $variables['mous'] = $block;
+      $cache = new CacheableMetadata();
+      $cache->addCacheableDependency($block);
+      $cache->applyTo($variables);
+    }
+
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_node_alter().
+ */
+function iiidem_theme_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $node = $variables['elements']['#node'] ?? NULL;
+  if ($node) {
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    if ($alias) {
+      // Convert /privacy-policy → privacy-policy
+      $clean = str_replace('-', '_', trim($alias, '/'));
+      $suggestions[] = 'node__' . $clean;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+
+{% include '@iiidem_theme/components/header/header.twig' with {
+  logo: logo,
+  site_name: site_name,
+  page: page
+} %}
+
+<main>
+  {{ page.content }}
+</main>
+
+{% include '@iiidem_theme/components/footer/footer.twig' %}

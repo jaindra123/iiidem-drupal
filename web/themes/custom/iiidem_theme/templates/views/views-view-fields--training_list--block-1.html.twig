@@ -1,0 +1,20 @@
+
+<div class="gov-card h-100 text-center">
+  <div class="gov-icon">
+    <i class="fas fa-file-signature"></i>
+  </div>
+  <h3><a href="{{ fields.view_node.content }}" class="work-title">
+    {{ fields.title.content }}
+  </a></h3>
+
+     <p>
+      {{ fields.body.content|striptags|trim|slice(0,140) }}
+      <a href="{{ path('entity.node.canonical', {'node': row._entity.id}) }}">
+        Read More →
+      </a>
+  </p>
+  <a href="{{ path('entity.node.canonical', {'node': row._entity.id}) }}" class="gov-btn">
+    Explore Programs
+  </a>
+</div>
+

@@ -1,0 +1,25 @@
+
+  <div class="container">
+    {# Section Heading #}
+    <div class="text-center mb-5">
+      <span class="gov-line"></span>
+      <h2 class="gov-title">
+        IIIDEM’S TRAINING PROGRAMS & ACADEMIC COURSES
+      </h2>
+      <p class="gov-subtitle">
+        IIIDEM is one of the few institutions in the world which is not only involved in the Training & Capacity Building Programs for its Electoral officials, but also catering to the requirements of Election Management Bodies (EMBs) world over.
+      </p>
+      <span class="gov-line"></span>
+    </div>
+
+    <div class="row g-4">
+      {% for row in rows %}
+        <div class="col-lg-4 col-md-6">
+          {{ row.content }}
+        </div>
+         {% endfor %}
+    </div>
+  </div>
+</section>
+
+
