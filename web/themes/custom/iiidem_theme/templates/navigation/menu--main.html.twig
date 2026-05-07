@@ -1,44 +1,33 @@
-<ul class="navbar-nav ms-auto py-0">
 
-{% for item in items %}
+<ul class="navbar-nav">
 
-  {% if item.below %}
-    <li class="nav-item dropdown">
+  {% for item in items %}
+    <li class="nav-item {% if item.below %}has-submenu{% endif %}">
 
-      <a href="{{ item.url }}"
-         class="nav-link dropdown-toggle {{ item.in_active_trail ? 'active' }}"
-         data-bs-toggle="dropdown"
-         aria-expanded="false">
+      <a href="{{ item.url }}" class="nav-link">
 
         {{ item.title }}
+
+        {# Show arrow only if submenu exists #}
+        {% if item.below %}
+          <span class="submenu-arrow">
+            <i class="bi bi-chevron-down"></i>
+          </span>
+        {% endif %}
+
       </a>
 
-      <ul class="dropdown-menu m-0">
-
-        {% for child in item.below %}
-          <li>
-            <a href="{{ child.url }}"
-               class="dropdown-item {{ child.in_active_trail ? 'active' }}">
-              {{ child.title }}
-            </a>
-          </li>
-        {% endfor %}
-
-      </ul>
+      {% if item.below %}
+        <ul class="menu">
+          {% for child in item.below %}
+            <li>
+              <a href="{{ child.url }}">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
 
     </li>
-
-  {% else %}
-
-    <li class="nav-item">
-      <a href="{{ item.url }}"
-         class="nav-link {{ item.in_active_trail ? 'active' }}">
-        {{ item.title }}
-      </a>
-    </li>
-
-  {% endif %}
-
-{% endfor %}
+  {% endfor %}
 
 </ul>

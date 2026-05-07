@@ -1,4 +1,4 @@
-uuid: c5d74251-e9ae-455b-894a-094a37db9b06
+uuid: 36fd083c-51b5-49e5-9fa4-d0ae51ae2e59
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: paragraph.admin_training_institute_logo.field_administrative_logo
 field_name: field_administrative_logo
 entity_type: paragraph
 bundle: admin_training_institute_logo
-label: 'ADMINISTRATIVE Logo'
+label: 'Administrative logo'
 description: ''
 required: false
 translatable: false

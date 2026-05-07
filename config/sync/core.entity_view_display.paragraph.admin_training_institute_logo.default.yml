@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.admin_training_institute_logo.field_administrative_logo
+    - field.field.paragraph.admin_training_institute_logo.field_description
     - paragraphs.paragraphs_type.admin_training_institute_logo
   module:
     - image
@@ -20,6 +21,13 @@ content:
       image_style: ''
       image_loading:
         attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content

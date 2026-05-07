@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.slide.field_button_link
     - field.field.paragraph.slide.field_slide_description
     - field.field.paragraph.slide.field_slide_image
     - field.field.paragraph.slide.field_title
@@ -11,26 +10,17 @@ dependencies:
     - paragraphs.paragraphs_type.slide
   module:
     - image
-    - link
 id: paragraph.slide.default
 targetEntityType: paragraph
 bundle: slide
 mode: default
 content:
-  field_button_link:
-    type: link_default
-    weight: 3
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   field_slide_description:
-    type: string_textarea
-    weight: 2
+    type: string_textfield
+    weight: 12
     region: content
     settings:
-      rows: 5
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_slide_image:
@@ -43,11 +33,16 @@ content:
     third_party_settings: {  }
   field_title:
     type: string_textfield
-    weight: 0
+    weight: 11
     region: content
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

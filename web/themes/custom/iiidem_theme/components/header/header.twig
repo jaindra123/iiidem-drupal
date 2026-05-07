@@ -10,12 +10,13 @@
   <div class="container-fluid bg-primary px-5 d-none d-lg-block">
     <div class="row gx-0 align-items-center">
         <div class="col-lg-5 text-center text-lg-start mb-lg-0">
-            <div class="d-flex">
+          Menu
+           <!--  <div class="d-flex">
                 <a href="#" class="text-muted me-4"><i class="fas fa-envelope text-secondary me-2"></i>{{header_mail}}</a>
                 <a href="#" class="text-muted me-0"><i class="fas fa-phone-alt text-secondary me-2"></i>{{contact}}</a>
-            </div>
+            </div> -->
         </div>
-        <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
+      <!--   <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
 
               {% if twitter is not empty %}
@@ -49,43 +50,65 @@
               {% endif %}
 
             </div>
-        </div>
-        <div class="col-lg-4 text-center text-lg-end">
+        </div> -->
+         <div class="col-lg-6 text-center text-lg-end">
           <div class="d-inline-flex align-items-center gap-2">
-              <button onclick="changeFontSize('decrease')" class="btn btn-sm btn-light">A−</button>
+              <!-- <button onclick="changeFontSize('decrease')" class="btn btn-sm btn-light">A−</button>
               <button onclick="changeFontSize('reset')" class="btn btn-sm btn-light">A</button>
-              <button onclick="changeFontSize('increase')" class="btn btn-sm btn-light">A+</button>
+              <button onclick="changeFontSize('increase')" class="btn btn-sm btn-light">A+</button> -->
+              
+              <a href="/" class="home-icon">
+                <i class="bi-house-fill"></i>
+              </a>
               <span class="mx-2 text-white">|</span>
-              {{ page.header }}
+              <div class="d-flex">
+               <!--  <a href="#" class="text-muted me-4"><i class="fas fa-envelope text-secondary me-2"></i>{{header_mail}}</a> -->
+                <a href="#" class="text-muted me-0"><i class="fas fa-phone-alt text-secondary-top me-2"></i>{{contact}}</a>
+                <span class="mx-2 text-white">|</span>
+                Screen Reader Access
+                <span class="mx-2 text-white">|</span>
+                <div class="skip" id=""><a href="#skip_main_content" title="Skip to main content">Skip to main content </a></div>
+
+            </div>
+             {# {{ page.header }} #}
           </div>
-      </div>
+      </div> 
     </div>
 </div>
 <!-- Topbar End -->
 
 <!-- Navbar & Hero Start -->
+
 <div class="container-fluid nav-bar p-0">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3">
 
     <!-- Logo Left -->
-    <a href="{{ path('<front>') }}" class="navbar-brand p-0 me-auto">
+    <a href="{{ path('<front>') }}" class="navbar-brand p-0">
       <img src="{{ logo }}" alt="{{ site_name }}" class="img-fluid">
     </a>
 
     <!-- Mobile Toggle -->
-    <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse">
-      <span class="fa fa-bars"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu Right -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+    <!-- Center + Right Wrapper -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
 
-      {{ page.primary_menu }}
+      <!-- Menu Center -->
+      <div class="mx-auto">
+        {{ page.primary_menu }}
+      </div>
+
+      <!-- Buttons Right -->
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="gov-btn">Login</a>
+        <a href="/photo-gallery" class="gov-btn">Photo gallery</a>
+      </div>
 
     </div>
 
   </nav>
 </div>
+
 <!-- Navbar & Hero End -->

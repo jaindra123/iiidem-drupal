@@ -3,6 +3,7 @@
 use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Menu\MenuTreeParameters;
 
 /**
  * Implements hook_preprocess_page().
@@ -29,6 +30,7 @@ function iiidem_theme_preprocess_page(array &$variables) {
     'youtube',
     'contact',
     'footer_about',
+    'footer_address',
   ];
 
   foreach ($settings as $setting) {
@@ -127,12 +129,65 @@ function iiidem_theme_preprocess_page(array &$variables) {
     /* ========================================================
      * 5.6 MOUs WITH ADMINISTRATIVE TRAINING INSTITUTES slider BLOCK
      * ======================================================== */
-    if ($block = $load_block('mou')) {
-      $variables['mous'] = $block;
-      $cache = new CacheableMetadata();
-      $cache->addCacheableDependency($block);
-      $cache->applyTo($variables);
+    $logos = [];
+    // Load block by properties.
+    $blocks = \Drupal::entityTypeManager()
+      ->getStorage('block_content')
+      ->loadByProperties([
+            'type' => 'mou',
+            'info' => 'Mous',
+      ]);
+    // Get first matching block.
+    $block = reset($blocks);
+
+  //  $variables['mou_description'] = '';
+   /* if (!$block->get('field_description')->isEmpty()) {
+      $variables['mou_description'] =
+        $block->get('field_description')->processed;
+    }*/
+
+    if ($block) {
+      $paragraphs = $block->get('field_admin_institutes_logo')->referencedEntities();
+      foreach ($paragraphs as $paragraph) {
+        $image = '';
+        $description = '';
+        // Image
+        if (!$paragraph->get('field_administrative_logo')->isEmpty()) {
+          $file = $paragraph->get('field_administrative_logo')->entity;
+          if ($file) {
+            $image = \Drupal::service('file_url_generator') ->generateAbsoluteString($file->getFileUri());
+          }
+        }
+        // Description
+        if (!$paragraph->get('field_description')->isEmpty()) {
+          $description = $paragraph->get('field_description')->value;
+        }
+        $logos[] = [
+          'image' => $image,
+          'description' => $description,
+        ];
+      }
     }
+    $variables['logos'] = $logos;
+
+    /**
+     * custom footer ment display
+    */
+    $menu_tree = \Drupal::menuTree();
+    $parameters = new MenuTreeParameters();
+    // Footer First Menu
+    $tree1 = $menu_tree->load('footer-first-menu', $parameters);
+    $manipulators = [
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+      ];
+    $tree1 = $menu_tree->transform($tree1, $manipulators);
+    $variables['footer_first_menu'] = $menu_tree->build($tree1);
+    // Footer Second Menu
+    $tree2 = $menu_tree->load('footer-second-menu', $parameters);
+    $tree2 = $menu_tree->transform($tree2, $manipulators);
+    $variables['footer_second_menu'] = $menu_tree->build($tree2);
+
 
   }
 }
@@ -151,3 +206,26 @@ function iiidem_theme_theme_suggestions_node_alter(array &$suggestions, array $v
     }
   }
 }
+/**
+ * Implements hook_preprocess_node().
+ */
+
+function iiidem_theme_preprocess_node(&$variables) {
+  if ($variables['node']->bundle() == 'page') {
+    $slides = [];
+    foreach ($variables['node']->get('field_hero_banner')->referencedEntities() as $para) {
+      $image = '';
+      if ($para->get('field_slide_image')->entity) {
+        $file = $para->get('field_slide_image')->entity;
+        $image = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      }
+      $slides[] = [
+        'title' => $para->get('field_title')->value,
+        'desc' => $para->get('field_slide_description')->value,
+        'image' => $image,
+      ];
+    }
+    $variables['slides'] = $slides;
+  }
+}
+

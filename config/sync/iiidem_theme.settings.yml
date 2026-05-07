@@ -5,7 +5,7 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://iiidem-logo_2.png'
+  path: 'public://iiidem_new_logo_0.PNG'
 favicon:
   use_default: 1
 address: ''
@@ -16,9 +16,9 @@ twitter: twitter.com
 instagram: instagram.om
 youtube: youtube.com
 footer_logo:
-  - '10'
-footer_about: 'The Election Commission of India has set up the India International Institute of Democracy & Election Management (IIIDEM) as its advance training and resources wing. Springing from the realization of modern India’s founding fathers and constitutions makers that free, fair, credible and professionally managed elections are the bedrock of democracy, IIIDEM is an initiative of the Commission for fulfilling its high aspiration on democracy and election management.'
-footer_address: ''
+  - '61'
+footer_about: 'INDIA INTERNATIONAL INSTITUTE OF  DEMOCRACY & ELECTION MANAGEMENT'
+footer_address: 'Sector 13, Dwarka, Delhi, 110078, India'
 copyright: 'All Rights Reserved.'
 linkedin: ''
 meta_description: ''

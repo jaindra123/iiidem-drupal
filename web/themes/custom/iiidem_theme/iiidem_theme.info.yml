@@ -14,5 +14,6 @@ regions:
   content: Content
   homepage_services: Homepage Services
   homepage_training: Homepage Training
+  homepage_event: Homepage Event
   homepage_image_gallery: Homepage Image Gallery
   footer: Footer

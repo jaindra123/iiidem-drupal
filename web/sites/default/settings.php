@@ -898,3 +898,6 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+
+
+$settings['config_sync_directory'] = '../config/sync';

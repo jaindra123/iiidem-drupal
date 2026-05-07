@@ -1,0 +1,16 @@
+<div class="gallery-section">
+  <div class="container">
+    <div class="row g-4">
+      {% for row in rows %}
+        {% set node = row.content['#row']._entity %}
+        <div class="col-lg-3 col-md-6">
+          <a href="{{ path('entity.node.canonical', {'node': node.id()}) }}">
+            {% if node.field_event_image.entity %}
+              <img src="{{ file_url(node.field_event_image.entity.uri.value) }}" alt="{{ node.title.value }}" class="gallery-img">
+            {% endif %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

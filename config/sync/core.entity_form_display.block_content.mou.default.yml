@@ -5,7 +5,7 @@ dependencies:
   config:
     - block_content.type.mou
     - field.field.block_content.mou.body
-    - field.field.block_content.mou.field_admin_institutes
+    - field.field.block_content.mou.field_admin_institutes_logo
   module:
     - paragraphs
 id: block_content.mou.default
@@ -13,9 +13,9 @@ targetEntityType: block_content
 bundle: mou
 mode: default
 content:
-  field_admin_institutes:
+  field_admin_institutes_logo:
     type: paragraphs
-    weight: 2
+    weight: 26
     region: content
     settings:
       title: Paragraph
@@ -38,13 +38,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 1
-    region: content
-    settings:
-      include_locked: true
     third_party_settings: {  }
 hidden:
   body: true

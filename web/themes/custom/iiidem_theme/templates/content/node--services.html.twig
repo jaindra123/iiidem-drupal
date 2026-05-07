@@ -74,6 +74,11 @@
         alt="{{ image_item.alt ?: node.title.value }}" width="100%" >
     {% endif %}
   </div>
-    <p class="text-muted">{{ content.body }}</p>
+    <p class="text-muted">
+      <div class="service-body">
+        {{ content.body }}
+      </div>
+    </p>
   </div>
 </section>
+

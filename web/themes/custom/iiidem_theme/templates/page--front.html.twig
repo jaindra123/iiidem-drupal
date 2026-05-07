@@ -65,47 +65,92 @@
     <!-- Homepage Carousel End -->
 
     <!-- Services Start -->
-      {{ page.homepage_services }}
+        {# {{ page.homepage_services }} #}
+      
     <!-- Services End -->
 
      <!-- training Start -->
-      {{ page.homepage_training }}
+      <div id="skip_main_content"> {{ page.homepage_training }} </div>
     <!-- training End -->
 
-    <!-- Statistic Section start by custom block content (Home statistical data)-->
+    <section class="media-section py-5" >
+        <div class="swiper-wrapper">
+           <img src="https://iiidem.ddev.site/sites/default/files/2026-05/555.png" alt="" style="width: 100%;">
+        </div>
+    </section>
 
-    {% if home_about_block.field_image.entity %}
-      {% set logo_img = file_url(home_about_block.field_image.entity.fileuri) %}
-    {% endif %}
-    <section class="home-about py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <img src="{{ logo_img }}" alt="">
-            <div class="about-desc">
-                {{ home_about_block.field_description.value |raw  }}
-            </div>
-              <div class="stats-grid">
-                {% for item in home_about_block.field_statistics %}
-                  {% set stat = item.entity %}
-                  <div class="stat-box">
-                    {% if stat.field_icon.entity %}
-                      <img src="{{ file_url(stat.field_icon.entity.uri.value) }}" alt="">
-                    {% endif %}
-                    <p>{{ stat.field_label.value }}</p>
-                    <h3>{{ stat.field_number.value }}</h3>
-                  </div>
-                {% endfor %}
+   <!-- Statistic Section start by custom block content (Home statistical data)-->
+
+    <section class="about-section">
+  <div class="container-fluid px-5">
+    <h2 class="about-title">
+      About IIIDEM (India International Institute of Democracy and Election Management)
+    </h2>
+    <div class="row">
+      <!-- Left Content -->
+      <div class="col-lg-4">
+        <div class="about-left">
+          <div class="logo-box">
+             {% if home_about_block.field_image.entity %}
+              {% set logo_img = file_url(home_about_block.field_image.entity.fileuri) %}
+            {% endif %}
+            <img src="{{logo_img}}" alt="IIIDEM Logo">
+          </div>
+          <p class="about-text">
+            {{ home_about_block.field_description.value|striptags }}
+          </p>
+          <a href="/about-us" class="read-btn">
+            Read More <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Stats -->
+      <div class="col-lg-8">
+       <div class="stats-wrapper">
+        <!-- Dynamic Background Image -->
+          {% if home_about_block.field_home_iiidem_image.entity %}
+            {% set iiidem_img = file_url(home_about_block.field_home_iiidem_image.entity.fileuri) %}
+          {% endif %}
+          <img src="{{ iiidem_img }}" alt="Background Image" class="stats-bg">
+
+            <!-- Blue Overlay -->
+            <div class="stats-overlay"></div>
+            <!-- Cross Lines -->
+            <div class="cross-horizontal"></div>
+            <div class="cross-vertical"></div>
+            <!-- Dynamic Statistics -->
+            <div class="stats-grid">
+              <!-- Items -->
+              {% for item in home_about_block.field_statistics %}
+                {% set stat = item.entity %}
+              <div class="stat-box">
+                <div class="stat-icon">
+                   {% if stat.field_icon.entity %}
+                  <img src="{{ file_url(stat.field_icon.entity.uri.value) }}" alt="">
+                  {% endif %}
+                </div>
+                <h2 class="stat-number">{{ stat.field_number.value }}+</h2>
+                <p class="stat-text">
+                  {{ stat.field_label.value }}
+                </p>
               </div>
-              </div>
-              {% if home_about_block.field_home_iiidem_image.entity %}
-                {% set iiidem_img = file_url(home_about_block.field_home_iiidem_image.entity.fileuri) %}
-              {% endif %}
-               <div class="col-lg-6"><img src="{{ iiidem_img }}" alt=""> </div>
+              {% endfor %}
             </div>
           </div>
-      </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
       <!-- Statistic Section end -->
+
+       <!-- Event Start -->
+  <section class="py-5">
+     {{ page.homepage_event }}
+  </section>
+   <!-- Event End -->
 
       <!-- About Section on Home page Start -->
       <div class="container">
@@ -198,7 +243,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- ===============================
 IIIDEM Global Training Footprint Animated Bar Chart Version
@@ -326,60 +370,37 @@ IIIDEM international_organizations Setion
   </div>
 </section>
 
-
-
 <!-- ===============================
 IIIDEM mous Setion
 ================================ -->
 
-<section class="media-section py-5" >
-    <!-- Section Heading -->
-    <div class="section-heading text-center mb-5">
-      <span class="gov-line"></span>
-      <h2 class="gov-title">{{ mous.label() }}</h2>
-      <span class="gov-line"></span>
-    </div>
-    <!-- Slider -->
-
-   <div class="swiper clientSwiper">
-  <div class="swiper-wrapper">
-
-    {% for item in mous.field_admin_institutes %}
-      
-      {% set paragraph = item.entity %}
-
-        {{dump(paragraph.field_administrative_logo)}}
-      
-      {% if paragraph and paragraph.field_administrative_logo.entity %}
-        {% set file = paragraph.field_administrative_logo.entity %}
-        
-        <div class="swiper-slide">
-          <img 
-            src="{{ file_url(file.uri.value) }}" 
-            alt="{{ paragraph.field_administrative_logo.alt|default('Logo') }}" />
+   <section class="mou-section">
+    <div class="container">
+      <h2 class="mou-title">
+        MOUs WITH ADMINISTRATIVE TRAINING INSTITUTES (ATIs)  {{ mou_description|raw }}
+      </h2>
+      <div class="row g-4">
+        <!-- Card -->
+        <div class="row g-4">
+          {% for logo in logos %}
+            <div class="col-lg col-md-6">
+              <div class="mou-card">
+                <div class="mou-logo">
+                  <img src="{{ logo.image }}" alt="">
+                </div>
+                <h3 class="mou-name">
+                  {{ logo.description }}
+                </h3>
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endif %}
 
-    {% endfor %}
+      </div>
+    </div>
+  </section>
 
-  </div>
-</div>
-
-
-
-
-  
-  </div>
-</section>
-
-
-
-
-
-
-
-  
-
+ 
 
 </main>
 

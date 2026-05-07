@@ -14,11 +14,47 @@
 
     <div class="row g-4">
       {% for row in rows %}
+        {% set node = row.content['#row']._entity %}
+
         <div class="col-lg-4 col-md-6">
-          {{ row.content }}
+          <div class="gov-card h-100 text-center">
+
+            <!-- Image -->
+            <div class="">
+              {% if node.field_training_image.entity %}
+                <img 
+                  src="{{ file_url(node.field_training_image.entity.fileuri) }}" 
+                  alt="{{ node.label() }}" 
+                  class="img-fluid">
+              {% endif %}
+            </div>
+
+            <!-- Title -->
+            <h3>
+              <a href="{{ path('entity.node.canonical', {'node': node.id() }) }}">
+                {{ node.label() }}
+              </a>
+            </h3>
+
+            <!-- Description -->
+             <p>
+              {{ node.body.value|striptags|slice(0,140) }}...
+              <a href="{{ path('entity.node.canonical', {'node': node.id() }) }}">
+                Read More →
+              </a>
+            </p>
+
+            <!-- Button -->
+            <a href="{{ path('entity.node.canonical', {'node': node.id() }) }}" class="gov-btn">
+              Explore Programs
+            </a>
+
+          </div>
         </div>
-         {% endfor %}
+      {% endfor %}
     </div>
+
+
   </div>
 </section>
 

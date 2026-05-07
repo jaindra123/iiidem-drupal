@@ -12,76 +12,42 @@
             {% endif %}
           </a>
 
-          <p>
-            {{footer_about}}
-          </p>
         </div>
       </div>
 
-      {# Column 2 - Quick Links #}
+      {# Column 2 - Contact Info #}
+
+       <div class="col-lg-3 col-md-6">
+        <div class="footer-box">
+          <!-- <h5>Contact Us</h5> -->
+          <p class="contact">{{ footer_about }} </p>
+
+          <p class="address-email-contact">
+           <i class="bi bi-geo"></i> {{ footer_address }}
+          </p>
+
+          <p class="address-email-contact">
+            <i class="fas fa-phone-alt text-secondary me-2"></i> {{ contact }}
+          </p >
+
+          <p class="address-email-contact">
+            <i class="fas fa-envelope text-secondary me-2"></i> {{ header_mail }}
+          </p>
+          
+        </div>
+      </div>
+    {# Column 2 - First menu Links #}
       <div class="col-lg-2 col-md-6">
         <div class="footer-box">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="{{ path('<front>') }}">Home</a></li>
-            <li><a href="/about-us">About Us</a></li>
-            <li><a href="/training">Trainings</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+         {{ footer_first_menu }}
         </div>
       </div>
 
-      {# Column 3 - Important Links #}
+      {# Column 3 - Second menu Links #}
       <div class="col-lg-3 col-md-6">
         <div class="footer-box">
-          <h5>Important Links</h5>
-          <ul>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-condition">Terms & Conditions</a></li>
-            <li><a href="/accessibility">Accessibility</a></li>
-            <li><a href="/sitemap">Sitemap</a></li>
-            <li><a href="/helpdesk">Helpdesk</a></li>
-          </ul>
-        </div>
-      </div>
-
-      {# Column 4 - Contact Info #}
-      <div class="col-lg-3 col-md-6">
-        <div class="footer-box">
-          <h5>Contact Us</h5>
-          <p>
-            IIIDEM Campus, New Delhi, India
-          </p>
-          <p>
-            Phone: {{ contact }}
-          </p>
-          <p>
-            Email: {{ header_mail }}
-          </p>
-          <p>
-            Office Hours: 9:30 AM - 6:00 PM
-          </p>
-
-          <div class="social-links">
-
-            {% if facebook is not empty %}
-              <a href="{{ facebook }}" target="_blank"> <i class="fab fa-facebook-f"> </i></a>
-            {% endif %}
-
-            {% if twitter is not empty %}
-              <a  href="{{ twitter }}" target="_blank" > <i class="fab fa-x-twitter"></i></a>
-            {% endif %}
-
-            {% if youtube is not empty %}
-              <a  href="{{ youtube }}" target="_blank"> <i class="fab fa-youtube"></i> </a>
-            {% endif %}
-
-            {% if linkedin is not empty %}
-              <a href="{{ linkedin }}" target="_blank"> <i class="fab fa-linkedin-in"></i> </a>
-            {% endif %}
-
-          </div>
+         <!--  <h5>Important Links</h5> -->
+          {{ footer_second_menu }}
         </div>
       </div>
 
@@ -96,10 +62,13 @@
         © {{ "now"|date("Y") }} {{ site_name }}. All Rights Reserved.
       </p>
 
-      <p class="mb-0">
-        Last Updated: {{ "now"|date("d M Y") }}
-      </p>
-
+       <p class="mb-0">
+       <!--  Last Updated: {{ "now"|date("d M Y") }} -->
+        <span class="bottom-footer-link"><a href="#">Terms & Conditions </a></span> <span class="mx-2 text-white">|</span>
+        <span class="bottom-footer-link"><a href="/privacy-policy">Privacy Policy</a></span> <span class="mx-2 text-white">|</span>
+        <span class="bottom-footer-link"><a href="#">Cookie Policy</a></span>
+      </p> 
+    
     </div>
   </div>
 

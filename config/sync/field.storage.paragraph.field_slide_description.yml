@@ -1,4 +1,4 @@
-uuid: 7c3a1321-5e73-495b-a6d9-78c3802e2540
+uuid: 2127d7f6-4f1b-4217-a495-db1934f35fd8
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,11 @@ dependencies:
 id: paragraph.field_slide_description
 field_name: field_slide_description
 entity_type: paragraph
-type: string_long
+type: string
 settings:
+  max_length: 255
   case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1

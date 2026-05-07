@@ -1,4 +1,4 @@
-uuid: 281e4a42-736f-43d7-85b8-a9033bc8dfef
+uuid: 8d1e263f-f737-4130-9b8b-88cbb76f02ad
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ bundle: slide
 label: Title
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

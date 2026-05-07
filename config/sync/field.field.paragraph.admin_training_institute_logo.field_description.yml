@@ -1,0 +1,19 @@
+uuid: 7bed731f-ec20-4ac0-991e-6ba3ca76c79c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.admin_training_institute_logo
+id: paragraph.admin_training_institute_logo.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: admin_training_institute_logo
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
