@@ -1,0 +1,19 @@
+uuid: e739ea81-3d98-42b1-a4d6-952942286dd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.chairship
+    - field.storage.block_content.field_chairship_title
+id: block_content.chairship.field_chairship_title
+field_name: field_chairship_title
+entity_type: block_content
+bundle: chairship
+label: 'Chairship Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

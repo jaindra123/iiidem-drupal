@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.mou
     - field.field.block_content.mou.body
     - field.field.block_content.mou.field_admin_institutes_logo
+    - field.field.block_content.mou.field_mou_title
   module:
     - paragraphs
 id: block_content.mou.default
@@ -15,7 +16,7 @@ mode: default
 content:
   field_admin_institutes_logo:
     type: paragraphs
-    weight: 26
+    weight: 2
     region: content
     settings:
       title: Paragraph
@@ -30,6 +31,14 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_mou_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   info:
     type: string_textfield

@@ -1,0 +1,21 @@
+uuid: 40b0ca2a-6e69-4609-87cf-9467e66f4326
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pillars_and_priorities.field_pillars_priorities_title
+    - paragraphs.paragraphs_type.pillars_and_priorities
+id: paragraph.pillars_and_priorities.default
+targetEntityType: paragraph
+bundle: pillars_and_priorities
+mode: default
+content:
+  field_pillars_priorities_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

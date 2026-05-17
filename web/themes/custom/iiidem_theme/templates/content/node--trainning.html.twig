@@ -66,23 +66,65 @@
 <section class="service-hero">
   <div class="container">
     <h1 class="service-title"><h1>{{ label }}</h1></h1>
-    <div class="event-image"> 
-    {% set image_item = node.field_event_image.0 %}
-    {% if image_item and image_item.entity %}
-      <img  src="{{ file_url(image_item.entity.uri.value) }}" 
-        alt="{{ image_item.alt ?: node.title.value }}" width="100%" >
-    {% endif %}
-  </div>
-    <p class="text-muted">{{ content.body }}</p>
-    <div class="event-meta">
-    <p><strong>Location:</strong> {{ node.field_location.value }}</p>
-  </div>
 
-  <div class="event-meta">
-    <a href="{{ path('training_registration.form', {'node': node.id}) }}" class="btn btn-primary">
-      Register Now
-    </a>
-  </div>
+    <!-- <div class="event-image"> 
+      {% set image_item = node.field_event_image.0 %}
+      {% if image_item and image_item.entity %}
+        <img  src="{{ file_url(image_item.entity.uri.value) }}" 
+          alt="{{ image_item.alt ?: node.title.value }}" width="100%" >
+      {% endif %}
+    </div> -->
+
+      <div class="event-image">
+        {% if node.field_training_image.entity %}
+        <img src="{{ file_url(node.field_training_image.entity.uri.value) }}" alt="{{ node.field_training_image.alt }}" class="img-fluid">
+        {% endif %}
+      </div>
+
+      <p class="text-muted">{{ content.body }}</p>
+
+    <div class="event-meta">
+      <p><h1>Duration: {{ node.field_duration.value }} Hr.</h1> </p>
+    </div>
+
+     <div class="event-meta">
+      {% for item in node.field_trainer %}
+        <div class="expert">
+          <h1>
+            Trainer/Expert:
+
+            <a href="{{ path('entity.node.canonical', {'node': item.entity.id}) }}" class="trainer-link">
+              {{ item.entity.label }}
+            </a>
+
+          </h1>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="event-meta">
+      {% for item in node.field_category %}
+        <div class="expert">Category: </div>
+        <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}" class="trainer-link">
+          {{ item.entity.label }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="event-meta">
+      {% for item in node.field_language %}
+        <div class="expert">Language: </div>
+        <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}" class="trainer-link">
+          {{ item.entity.label }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="event-meta">
+      <a href="{{ path('training_registration.form', {'node': node.id}) }}" class="btn btn-primary">
+        Register Now
+      </a>
+    </div>
   </div>
    
 </section>

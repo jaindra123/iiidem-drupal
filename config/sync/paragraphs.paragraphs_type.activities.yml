@@ -1,0 +1,10 @@
+uuid: 1b418d12-f38e-4efb-987d-094310c283a7
+langcode: en
+status: true
+dependencies: {  }
+id: activities
+label: Activities
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,24 @@
+uuid: 3cff5313-e18e-43d8-88d3-311408c67d7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.chairship
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.chairship.body
+field_name: body
+entity_type: block_content
+bundle: chairship
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

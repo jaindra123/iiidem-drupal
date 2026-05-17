@@ -1,0 +1,23 @@
+uuid: 13c05593-4e4a-44ac-bfcc-7e2ad5600fbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_youtube_video_url
+    - node.type.youtube_videos
+  module:
+    - link
+id: node.youtube_videos.field_youtube_video_url
+field_name: field_youtube_video_url
+entity_type: node
+bundle: youtube_videos
+label: 'Video URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,10 @@
+uuid: fbbbff8b-6743-4dae-b0c8-7e1a0296fa92
+langcode: en
+status: true
+dependencies: {  }
+id: pillars_and_priorities
+label: 'Pillars and Priorities'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

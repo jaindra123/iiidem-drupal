@@ -66,23 +66,79 @@
 
     <!-- Services Start -->
         {# {{ page.homepage_services }} #}
-      
     <!-- Services End -->
 
      <!-- training Start -->
       <div id="skip_main_content"> {{ page.homepage_training }} </div>
     <!-- training End -->
 
-    <section class="media-section py-5" >
-        <div class="swiper-wrapper">
-           <img src="https://iiidem.ddev.site/sites/default/files/2026-05/555.png" alt="" style="width: 100%;">
+    <!-- chairship start -->
+    <section class="chairship-section">
+      <div class="container-fluid px-5">
+        <!-- Top Heading -->
+        <div class="row">
+          <div class="col-12">
+            <h1 class="main-title"> {{ chairship.label() }} </h1>
+            <div class="top-description">
+              {{ chairship.body.processed|raw }}
+            </div>
+          </div>
         </div>
+        <!-- Content -->
+        <div class="row align-items-start">
+          <!-- Left Content -->
+          <div class="col-lg-5">
+            <div class="content-box">
+              <h3>Key Activities</h3>
+              <ul>
+                {% for item in chairship.field_key_activities %}
+                {% set paragraph = item.entity %}
+                <li> {{ paragraph.field_activities_title.value }} </li>
+                {% endfor %}
+              </ul>
+
+              <h3>Thematic Pillars and Priorities</h3>
+              <ul>
+                 {% for item in chairship.field_thematic_pillars_and_prior %}
+                  {% set paragraph = item.entity %}
+                    <li> {{ paragraph.field_pillars_priorities_title.value }} </li>
+                 {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <!-- Right Images -->
+          <div class="col-lg-7">
+            <div class="row image-grid g-0">
+              {% if chairship.field_chairship_image.entity %}
+                {% set bg = file_url(chairship.field_chairship_image.entity.fileuri) %}
+              {% endif %}
+
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="{{ bg }}" alt="">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="right-images">
+                  <img src="images/chairship-top.jpg" alt="">
+                  <img src="images/chairship-bottom.jpg" alt="">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
+
+
 
    <!-- Statistic Section start by custom block content (Home statistical data)-->
 
-    <section class="about-section">
-  <div class="container-fluid px-5">
+  <section class="about-section">
+    <div class="container-fluid px-5">
     <h2 class="about-title">
       About IIIDEM (India International Institute of Democracy and Election Management)
     </h2>
@@ -147,10 +203,226 @@
       <!-- Statistic Section end -->
 
        <!-- Event Start -->
-  <section class="py-5">
-     {{ page.homepage_event }}
-  </section>
-   <!-- Event End -->
+      <section class="py-5">
+         {{ page.homepage_event }}
+      </section>
+      <!-- Event End -->
+
+      <section class="emb-section">
+  <div class="container-fluid px-5">
+
+    <div class="row g-3 align-items-stretch">
+
+      <!-- Left Section -->
+      <div class="col-lg-5">
+        <div class="left-panel">
+
+          <div class="left-content">
+
+            <div class="left-text">
+              <h2>
+                Collaboration & Partnerships with Other Election Management Bodies (EMBs)
+              </h2>
+            </div>
+
+            <div class="left-image">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="">
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 1 -->
+      <div class="col-lg col-md-4 col-6">
+        <div class="emb-card">
+          <div>
+            <div class="emb-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Flag_of_Bosnia_and_Herzegovina.svg/1200px-Flag_of_Bosnia_and_Herzegovina.svg.png" alt="">
+            </div>
+
+            <div class="emb-title">
+              Central Election Commission of BiH
+            </div>
+          </div>
+
+          <div class="emb-bottom"></div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg col-md-4 col-6">
+        <div class="emb-card">
+          <div>
+            <div class="emb-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Flag_of_Bhutan.svg" alt="">
+            </div>
+
+            <div class="emb-title">
+              Election Commission of Bhutan
+            </div>
+          </div>
+
+          <div class="emb-bottom blue-1"></div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg col-md-4 col-6">
+        <div class="emb-card">
+          <div>
+            <div class="emb-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg" alt="">
+            </div>
+
+            <div class="emb-title">
+              Bangladesh Election Commission
+            </div>
+          </div>
+
+          <div class="emb-bottom blue-2"></div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg col-md-4 col-6">
+        <div class="emb-card">
+          <div>
+            <div class="emb-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Afghanistan.svg" alt="">
+            </div>
+
+            <div class="emb-title">
+              Independent Election Commission (Afghanistan)
+            </div>
+          </div>
+
+          <div class="emb-bottom blue-3"></div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-lg col-md-4 col-6">
+        <div class="emb-card">
+          <div>
+            <div class="emb-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" alt="">
+            </div>
+
+            <div class="emb-title">
+              Election Commission of Nepal
+            </div>
+          </div>
+
+          <div class="emb-bottom"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- ===============================
+    IIIDEM international_organizations Setion
+    ================================ -->
+    <section class="emb-section">
+      <div class="container-fluid">
+        <!-- Heading -->
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="emb-title">
+              {{ international_organizations.label() }}
+            </h2>
+          </div>
+        </div>
+        <!-- Timeline -->
+        <div class="timeline-wrapper">
+          <div class="timeline-items">
+            <!-- Item -->
+             {% for item in international_organizations.field_partnership_logo %}
+              {% if item.entity and item.entity.field_organization_logo.entity %}
+            <div class="timeline-item">
+              <div class="logo-box">
+                <img src="{{ file_url(item.entity.field_organization_logo.entity.fileuri) }}"
+                    alt="{{ item.entity.field_organization_logo.alt|default('Logo') }}" />
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+          </div>
+          <!-- Timeline Black Line -->
+          <div class="timeline-line"></div>
+        </div>
+
+      </div>
+    </section>
+
+   <!-- ===============================
+    IIIDEM mous Setion
+    ================================ -->
+
+       <section class="mou-section">
+        <div class="container">
+          <h2 class="mou-title">
+            {{ mou_block_title  }}
+          </h2>
+          <div class="row g-4">
+            <!-- Card -->
+            <div class="row g-4">
+              {% for logo in logos %}
+                <div class="col-lg col-md-6">
+                  <div class="mou-card">
+                    <div class="mou-logo">
+                      <img src="{{ logo.image }}" alt="">
+                    </div>
+                    <h3 class="mou-name">
+                      {{ logo.description }}
+                    </h3>
+                  </div>
+                </div>
+              {% endfor %}
+
+
+              <!-- MOU Slider -->
+              <!-- <div class="swiper mouSwiper">
+                <div class="swiper-wrapper">
+                  {% for logo in logos %}
+                    <div class="swiper-slide">
+                      <div class="mou-card">
+                        <div class="mou-logo">
+                          <img src="{{ logo.image }}" alt="">
+                        </div>
+                        <h3 class="mou-name">
+                          {{ logo.description }}
+                        </h3>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+ -->
+              <!-- Slider -->
+              <div class="partner-slider">
+                <div class="partner-track">
+                  {% for logo in logos %}
+                    <div class="partner-item">
+                       <img src="{{ logo.image }}" alt="">
+                    </div>
+                    <h3 class="mou-name">
+                      {{ logo.description }}
+                    </h3>
+                  {% endfor %}
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- About Section on Home page Start -->
       <div class="container">
@@ -314,18 +586,17 @@ IIIDEM Global Training Footprint Animated Bar Chart Version
 IIIDEM partners Setion
 ================================ -->
 
-{% if partners.field_partner_section_background.entity %}
+<!-- {% if partners.field_partner_section_background.entity %}
   {% set bg = file_url(partners.field_partner_section_background.entity.fileuri) %}
 {% endif %}
 
 <section class="media-section py-5" style="background-image: url('{{ bg }}');">
-    <!-- Section Heading -->
+
     <div class="section-heading text-center mb-5">
       <span class="gov-line"></span>
       <h2 class="gov-title">{{ partners.label() }}</h2>
       <span class="gov-line"></span>
     </div>
-    <!-- Slider -->
     <div class="partner-slider">
       <div class="partner-track">
         {% for item in partners.field_partners_slider %}
@@ -340,67 +611,62 @@ IIIDEM partners Setion
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<!-- ===============================
-IIIDEM international_organizations Setion
-================================ -->
+    <section class="social-section">
 
-<section class="media-section py-5" >
-    <!-- Section Heading -->
-    <div class="section-heading text-center mb-5">
-      <span class="gov-line"></span>
-      <h2 class="gov-title">{{ international_organizations.label() }}</h2>
-      <span class="gov-line"></span>
-    </div>
-    <!-- Slider -->
-    <div class="swiper clientSwiper">
-      <div class="swiper-wrapper">
-        {% for item in international_organizations.field_partnership_logo %}
-          {% if item.entity and item.entity.field_organization_logo.entity %}
-            <div class="swiper-slide">
-              <img src="{{ file_url(item.entity.field_organization_logo.entity.fileuri) }}"
-                alt="{{ item.entity.field_organization_logo.alt|default('Logo') }}" />
-            </div>
-          {% endif %}
-        {% endfor %}
+  <div class="container">
+
+    <div class="social-wrapper">
+
+      <div class="follow-text">
+        Follow us
       </div>
+
+      <div class="social-links">
+
+        <!-- Facebook -->
+        <a href="#" class="social-item">
+          <span class="icon-circle facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </span>
+         <div> Facebook</div>
+
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" class="social-item">
+          <span class="icon-circle instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </span>
+          Instagram
+        </a>
+
+        <!-- Twitter -->
+        <a href="#" class="social-item">
+          <span class="icon-circle twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </span>
+          Twitter
+        </a>
+
+        <!-- Youtube -->
+        <a href="#" class="social-item">
+          <span class="icon-circle youtube">
+            <i class="fa-brands fa-youtube"></i>
+          </span>
+          Youtube
+        </a>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- ===============================
-IIIDEM mous Setion
-================================ -->
-
-   <section class="mou-section">
-    <div class="container">
-      <h2 class="mou-title">
-        MOUs WITH ADMINISTRATIVE TRAINING INSTITUTES (ATIs)  {{ mou_description|raw }}
-      </h2>
-      <div class="row g-4">
-        <!-- Card -->
-        <div class="row g-4">
-          {% for logo in logos %}
-            <div class="col-lg col-md-6">
-              <div class="mou-card">
-                <div class="mou-logo">
-                  <img src="{{ logo.image }}" alt="">
-                </div>
-                <h3 class="mou-name">
-                  {{ logo.description }}
-                </h3>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-
-      </div>
-    </div>
-  </section>
-
- 
 
 </main>
 

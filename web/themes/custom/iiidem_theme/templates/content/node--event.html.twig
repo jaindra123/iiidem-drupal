@@ -74,17 +74,70 @@
     {% endif %}
   </div>
   <div class="event-meta">
-    <p><strong>Location:</strong> {{ node.field_location.value }}</p>
-    <p><strong>Start Date:</strong> {{ node.field_start_date.value }}</p>
-    <p><strong>End Date:</strong> {{ node.field_end_date.value }}</p>
-    <p><strong>Training:</strong> 
-      {% for item in node.field_training %}
+    <p>
+      <span class="label">Location:</span>
+      <span class="date-value">
+        {{ node.field_location.value }}
+      </span>
+    </p>
+
+    <p>
+      <span class="label">Start Date:</span>
+      <span class="date-value">
+        {{ node.field_start_date.value }}
+      </span>
+    </p>
+    <p>
+      <span class="label">End Date:</span>
+      <span class="date-value">
+        {{ node.field_end_date.value }}
+      </span>
+    </p>
+
+     <p>
+      <span class="label">Training:</span>
+      <span class="date-value">
+         {% for item in node.field_training %}
         <a href="{{ path('entity.node.canonical', {'node': item.target_id}) }}">
           {{ item.entity.label }}
         </a>
       {% endfor %}
+      </span>
     </p>
-  </div>
-    <p class="text-muted">{{ content.body }}</p>
-  </div>
+
+    <p>
+      <span class="label">Event Description:</span>
+      <span class="date-value">
+        {{ node.field_event_description.value }}
+      </span>
+    </p>
+
+     <p>
+      <span class="label">Event Format:</span>
+      <span class="date-value">
+        {{ node.field_format.value }}
+      </span>
+    </p>
+
+    <p>
+      <span class="label">Participants:</span>
+      <span class="date-value">
+        {{ node.field_max_participants.value }}
+      </span>
+    </p>
+
+    <p>
+      <span class="label">Meeting Link:</span>
+      <span class="date-value">
+        <a href="{{ node.field_meeting_link.uri }}" target="_blank">
+          {{ node.field_meeting_link.title }}
+        </a>
+      </span>
+    </p>
+
+    <div class="event-content">
+      <span>
+        {{ content.body }}
+      </span>
+    </div>
 </section>

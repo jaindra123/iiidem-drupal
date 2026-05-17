@@ -1,0 +1,19 @@
+uuid: d9708714-06b3-4a1a-a959-808675b4994e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mou
+    - field.storage.block_content.field_mou_title
+id: block_content.mou.field_mou_title
+field_name: field_mou_title
+entity_type: block_content
+bundle: mou
+label: 'Mou title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 52b60169-1727-4550-b890-d9d6ad4d114c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.activities.field_activities_title
+    - paragraphs.paragraphs_type.activities
+id: paragraph.activities.default
+targetEntityType: paragraph
+bundle: activities
+mode: default
+content:
+  field_activities_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

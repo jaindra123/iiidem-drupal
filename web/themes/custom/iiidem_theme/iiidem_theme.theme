@@ -129,6 +129,7 @@ function iiidem_theme_preprocess_page(array &$variables) {
     /* ========================================================
      * 5.6 MOUs WITH ADMINISTRATIVE TRAINING INSTITUTES slider BLOCK
      * ======================================================== */
+  
     $logos = [];
     // Load block by properties.
     $blocks = \Drupal::entityTypeManager()
@@ -139,14 +140,8 @@ function iiidem_theme_preprocess_page(array &$variables) {
       ]);
     // Get first matching block.
     $block = reset($blocks);
-
-  //  $variables['mou_description'] = '';
-   /* if (!$block->get('field_description')->isEmpty()) {
-      $variables['mou_description'] =
-        $block->get('field_description')->processed;
-    }*/
-
     if ($block) {
+      $variables['mou_block_title'] = $block->get('field_mou_title')->value;
       $paragraphs = $block->get('field_admin_institutes_logo')->referencedEntities();
       foreach ($paragraphs as $paragraph) {
         $image = '';
@@ -169,6 +164,16 @@ function iiidem_theme_preprocess_page(array &$variables) {
       }
     }
     $variables['logos'] = $logos;
+
+    /* ========================================================
+     * 5.7 chairship  SLIDER BLOCK
+     * ======================================================== */
+    if ($block = $load_block('chairship')) {
+      $variables['chairship'] = $block;
+      $cache = new CacheableMetadata();
+      $cache->addCacheableDependency($block);
+      $cache->applyTo($variables);
+    }
 
     /**
      * custom footer ment display

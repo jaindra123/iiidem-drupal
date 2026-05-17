@@ -1,0 +1,23 @@
+uuid: 535d2d18-e760-4fe6-98e6-a03ef9a0872c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.youtube_videos
+  module:
+    - feeds
+id: node.youtube_videos.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: youtube_videos
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

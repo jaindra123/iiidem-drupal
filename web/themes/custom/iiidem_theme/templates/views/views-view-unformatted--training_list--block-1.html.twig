@@ -37,12 +37,16 @@
             </h3>
 
             <!-- Description -->
-             <p>
-              {{ node.body.value|striptags|slice(0,140) }}...
-              <a href="{{ path('entity.node.canonical', {'node': node.id() }) }}">
-                Read More →
-              </a>
-            </p>
+  
+            {% if node.body.value %}
+              <p>
+                {{ node.body.value|striptags|slice(0, 140) }}
+
+                <a href="{{ path('entity.node.canonical', {'node': node.id()}) }}">
+                  Read More →
+                </a>
+              </p>
+            {% endif %}
 
             <!-- Button -->
             <a href="{{ path('entity.node.canonical', {'node': node.id() }) }}" class="gov-btn">

@@ -1,0 +1,68 @@
+uuid: 128e5358-3d34-43ec-818e-07903c2f6f0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.youtube_videos.body
+    - field.field.node.youtube_videos.feeds_item
+    - field.field.node.youtube_videos.field_published_date
+    - field.field.node.youtube_videos.field_video_thumbnail
+    - field.field.node.youtube_videos.field_youtube_video_url
+    - node.type.youtube_videos
+  module:
+    - datetime
+    - image
+    - link
+    - text
+    - user
+id: node.youtube_videos.default
+targetEntityType: node
+bundle: youtube_videos
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_published_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_video_thumbnail:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_youtube_video_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true

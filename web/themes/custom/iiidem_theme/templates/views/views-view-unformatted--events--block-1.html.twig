@@ -16,12 +16,18 @@
           <!-- Content -->
           <div class="col-lg-8">
             <div class="event-content">
-              <p>
-                {{ node.body.value|striptags|slice(0, 220) }}
-                <a href="{{ path('entity.node.canonical', {'node': node.id()}) }}">
-                  Read More →
-                </a>
-              </p>
+
+              {% if node.body.value %}
+                <p>
+                  {{ node.body.value|striptags|slice(0, 220) }}
+
+                  <a href="{{ path('entity.node.canonical', {'node': node.id()}) }}">
+                    Read More →
+                  </a>
+                </p>
+              {% endif %}
+
+
               <div class="event-date">
                 <span>
                    {{ node.field_start_date.value|date("jS F, Y") }} -
@@ -30,8 +36,8 @@
               </div>
               <!--  block 2-->
               {{ drupal_view('events', 'block_2') }}
-
             </div>
+            <a href="/events"  class="event-btn" >All Events</a> 
           </div>
         </div>
       </div>

@@ -12,5 +12,20 @@
         </div>
       {% endfor %}
     </div>
+
+    <!-- Slider -->
+    <div class="partner-slider">
+      <div class="partner-track">
+        {% for row in rows %}
+        {% set node = row.content['#row']._entity %}
+            <div class="partner-item">
+              <img  src="{{ file_url(node.field_event_image.entity.uri.value) }}"
+                alt="{{ node.title.value }}" >
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+  
   </div>
 </div>
+

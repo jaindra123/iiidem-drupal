@@ -1,0 +1,23 @@
+uuid: 6c74b7c9-63aa-4867-b6b0-9be78bc84146
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.activities.field_activities_title
+    - paragraphs.paragraphs_type.activities
+id: paragraph.activities.default
+targetEntityType: paragraph
+bundle: activities
+mode: default
+content:
+  field_activities_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

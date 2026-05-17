@@ -1,0 +1,21 @@
+uuid: 52867335-a25d-48b3-89cc-b196a9d51bc6
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_mou_title
+field_name: field_mou_title
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

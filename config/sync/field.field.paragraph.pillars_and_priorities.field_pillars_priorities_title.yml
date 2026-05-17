@@ -1,0 +1,19 @@
+uuid: db292e99-7c8f-4689-97ee-39a088a1e31b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pillars_priorities_title
+    - paragraphs.paragraphs_type.pillars_and_priorities
+id: paragraph.pillars_and_priorities.field_pillars_priorities_title
+field_name: field_pillars_priorities_title
+entity_type: paragraph
+bundle: pillars_and_priorities
+label: 'Pillars and Priorities Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

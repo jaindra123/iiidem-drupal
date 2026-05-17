@@ -1,0 +1,55 @@
+uuid: 871bdcc6-4824-493b-a80a-46bccd8359f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.chairship
+    - field.storage.block_content.field_key_activities
+    - paragraphs.paragraphs_type.activities
+  module:
+    - entity_reference_revisions
+id: block_content.chairship.field_key_activities
+field_name: field_key_activities
+entity_type: block_content
+bundle: chairship
+label: 'Key Activities'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      activities: activities
+    negate: 0
+    target_bundles_drag_drop:
+      about_tab:
+        weight: 10
+        enabled: false
+      activities:
+        weight: 11
+        enabled: true
+      admin_training_institute_logo:
+        weight: 12
+        enabled: false
+      international_organization_logo:
+        weight: 13
+        enabled: false
+      partner_logo:
+        weight: 14
+        enabled: false
+      pillars_and_priorities:
+        weight: 15
+        enabled: false
+      region_item:
+        weight: 16
+        enabled: false
+      slide:
+        weight: 17
+        enabled: false
+      statistic_item:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

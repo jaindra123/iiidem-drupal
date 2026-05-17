@@ -150,6 +150,40 @@
         });
       });
 
+      var swiper = new Swiper(".mouSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: false,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        }
+      });
+
+
+      var swiper = new Swiper(".youtubeSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1
+          },
+          768: {
+            slidesPerView: 2
+          },
+          992: {
+            slidesPerView: 3
+          },
+          1200: {
+            slidesPerView: 4
+          }
+        }
+      });
+
      /* once('galleryLoadMore', context.querySelectorAll('#load-more')).forEach(function (button) {
         let itemsToShow = 3;
         let btnText = button.querySelector('.btn-text');
@@ -179,3 +213,9 @@
     } // end attach
   }; // end Drupal.behaviors
 })(Drupal, once);
+
+
+
+
+
+

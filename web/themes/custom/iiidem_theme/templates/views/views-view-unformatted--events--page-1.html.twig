@@ -15,47 +15,51 @@
         {% else %}
           {% set end_date = event.field_end_date.value|date("U") %}
         {% endif %}
-
         {% if end_date >= now %}
           <div class="event-card upcoming-card">
-            <h3>
-              <a href="{{ path('entity.node.canonical', {'node': event.id()}) }}">
-                {{ event.title.value }}
-              </a>
-            </h3>
-            <div class="event-meta">
-              <p><span class="label">Location:</span> {{ event.field_location.value }}</p>
-              <p><span class="label">Start Date:</span> {{ event.field_start_date.value }}</p>
-              <p><span class="label">End Date:</span> {{ event.field_end_date.value }}</p>
-              <p>
-                {% set image_item = event.field_event_image.0 %}
-                {% set file = image_item.entity %}
-                {% if file %}
-                  <img  src="{{ file_url(file.uri.value) }}"  alt="{{ image_item.alt }}"  width="50%"  >
-                {% endif %}
-              </p>
-
-              <p><strong>Training:</strong></p>
-              <ul>
-                {% for item in event.field_training %}
-                  <li><a href="{{ path('entity.node.canonical', {'node': item.target_id}) }}"> {{ item.entity.label }} </a> </li>
-                {% endfor %}
-              </ul>
+            <div class="event-image">
+              {% set image_item = event.field_event_image.0 %}
+              {% set file = image_item.entity %}
+              {% if file %}
+                <img src="{{ file_url(file.uri.value) }}" alt="{{ image_item.alt }}" class="img-fluid">
+              {% endif %}
             </div>
+            <div class="event-content">
+              <h3 class=""> 
+                <a href="{{ path('entity.node.canonical', {'node': event.id()}) }}"
+                class="">{{ event.title.value }}</a> 
+              </h3>
 
+               {% set body_text = event.body.0.value|striptags %}
+                <span class="event-detail">
+                  {{ body_text|slice(0, 120) }}
+
+                  {% if body_text|length > 120 %}
+                    ...
+                  {% endif %}
+                </span>
+
+                {% if body_text|length > 120 %}
+                  <span><a href="{{ path('entity.node.canonical', {'node': event.id()}) }}"
+                     class="read-more">
+                    Read More
+                  </a></span>
+                {% endif %}
+
+              <!-- <a href="{{ path('entity.node.canonical', {'node': event.id()}) }}"
+                class="event-btn">View More </a> -->
+            </div>
           </div>
         {% endif %}
       {% endfor %}
-
     </div>
   </section>
 
-
   {# ================= PAST EVENTS ================= #}
+  
   <section class="events-section past">
     <h2 class="section-title">Past Events</h2>
     <div class="cards-grid">
-
       {% for row in rows %}
         {% set event = row.content['#row']._entity %}
 
@@ -64,14 +68,41 @@
         {% else %}
           {% set end_date = event.field_end_date.value|date("U") %}
         {% endif %}
-
         {% if end_date < now %}
           <div class="event-card past-card">
-            {{ row.content }}
+            <div class="event-image">
+              {% set image_item = event.field_event_image.0 %}
+              {% set file = image_item.entity %}
+              {% if file %}
+                <img src="{{ file_url(file.uri.value) }}"alt="{{ image_item.alt }}"  class="img-fluid">
+              {% endif %}
+            </div>
+            <div class="event-content">
+              <h3 class=""> 
+                <a href="{{ path('entity.node.canonical', {'node': event.id()}) }}"
+                class="">{{ event.title.value }}</a> 
+              </h3>
+              {% set body_text = event.body.0.value|striptags %}
+                <span class="event-detail">
+                  {{ body_text|slice(0, 120) }}
+
+                  {% if body_text|length > 120 %}
+                    ...
+                  {% endif %}
+                </span>
+
+                {% if body_text|length > 120 %}
+                  <span><a href="{{ path('entity.node.canonical', {'node': event.id()}) }}"
+                     class="read-more">
+                    Read More
+                  </a></span>
+                {% endif %}
+             <!--  <a href="{{ path('entity.node.canonical', {'node': event.id()}) }}"  class="event-btn" >
+                View Details</a> -->
+            </div>
           </div>
         {% endif %}
       {% endfor %}
-
     </div>
   </section>
 
